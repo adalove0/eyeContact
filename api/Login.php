@@ -7,7 +7,7 @@
 	$password = "plsdonthackmebro2";
 	
 	$unameID = 0;
-
+	
 	$conn = new mysqli($servername, $username, $password, $database);
 	
 	if ($conn->connect_error) 
@@ -45,13 +45,13 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"unameID":0,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
 	function returnWithInfo( $firstName, $lastName, $id )
 	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		$retValue = '{"unameID":' . $unameID . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
