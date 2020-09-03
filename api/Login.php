@@ -1,5 +1,4 @@
 <?php
-
 	$inData = getRequestInfo();
 	$servername = "localhost";
 	$database = "eyeContacts";
@@ -7,16 +6,17 @@
 	$password = "plsdonthackmebro2";
 	
 	$unameID = 0;
+	$inputUname = $inData["username"];
+	$inputPassword = $inData["password"];
 	
 	$conn = new mysqli($servername, $username, $password, $database);
-	
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$sql = "SELECT unameID FROM login_info where username='" . $inData["username"] . "' and password='" . $inData["password"] . "'";
+		$sql = "SELECT unameID FROM login_info where username='" . $inputUname . "' and password='" . $inputPassword . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
@@ -49,7 +49,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $firstName, $lastName, $id )
+	function returnWithInfo( $unameID )
 	{
 		$retValue = '{"unameID":' . $unameID . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
