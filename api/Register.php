@@ -5,8 +5,8 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
-	$username = $inData["username"];
-	$password = $inData["password"];
+	$inputUname = $inData["username"];
+	$inputPassword = $inData["password"];
 
 	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
@@ -15,7 +15,7 @@
 	} 
 	else
 	{
-		$sql = "insert into login_info (username,password) VALUES ('" . $username . "', '" . $password . "')";
+		$sql = "INSERT INTO login_info (username,password) VALUES ('" . $inputUname . "','" . $inputPassword . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
