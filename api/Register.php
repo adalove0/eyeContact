@@ -7,6 +7,7 @@
 	
 	$username = $inData["username"];
 	$password = $inData["password"];
+	$email = $inData["email"];
 
 	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
@@ -15,7 +16,7 @@
 	} 
 	else
 	{
-		$sql = "insert into login_info (username,password) VALUES (" . $username . ",'" . $password . "')";
+		$sql = "insert into login_info (username,password,email) VALUES ('" . $username . "', '" . $password . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
