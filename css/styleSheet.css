@@ -1,6 +1,6 @@
 body
 {
-  background-image: url(sky.gif);
+  background-image: url('../images/sky.gif');
   /*background-image: linear-gradient(#add8e6, #FFFFFF);*/
   /* Define a border */
   background-repeat: no-repeat;
