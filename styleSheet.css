@@ -1,0 +1,68 @@
+body
+{
+  background-image: url(sky.gif);
+  /*background-image: linear-gradient(#add8e6, #FFFFFF);*/
+  /* Define a border */
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.titleText
+{
+  font-family: monospace;
+  text-align: center;
+  float: center;
+}
+
+.image
+{
+  border-color: black;
+  text-align: center;
+  font-family: monospace;
+  border-radius: 30px;
+  background-color: inherit;
+  max-width: 100%;
+  height: auto;
+}
+
+.button
+{
+  background: white;
+  border: none;
+  text-align: center;
+  padding: 6px 10px;
+  font-family: monospace;
+  border-radius: 15px
+}
+
+.form
+{
+  width:auto;
+  padding: 6px 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border-color: white;
+}
+.loginAndPassword
+{
+  float: center;
+  width: auto%;
+  font-family: monospace;
+  text-align: center;
+  background-image: radial-gradient(#FFFFFF, #191970);
+  padding: 15px;
+  margin:auto;
+  border-style:solid;
+  border-color: white;
+  /*Centering Vertically and Horizontally*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
