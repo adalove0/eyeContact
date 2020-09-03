@@ -6,9 +6,7 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
-	$id = 0;
-	$firstName = "";
-	$lastName = "";
+	$unameID = 0;
 
 	$conn = new mysqli($servername, $username, $password, $database);
 	
@@ -18,16 +16,14 @@
 	} 
 	else
 	{
-		$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+		$sql = "SELECT unameID FROM login_info where username='" . $inData["username"] . "' and password='" . $inData["password"] . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
 			$row = $result->fetch_assoc();
-			$firstName = $row["firstName"];
-			$lastName = $row["lastName"];
-			$id = $row["ID"];
+			$unameID = $row["unameID"];
 			
-			returnWithInfo($firstName, $lastName, $id );
+			returnWithInfo($unameID);
 		}
 		else
 		{

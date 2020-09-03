@@ -1,0 +1,10 @@
+CREATE TABLE login_info (
+  username VARCHAR(20), password TEXT,
+  unameID INTEGER PRIMARY KEY AUTO_INCREMENT
+);
+
+CREATE TABLE contacts (
+  unameID INTEGER, contactNumber INTEGER PRIMARY KEY AUTO_INCREMENT,
+  contactFirstName VARCHAR(50), contactLastName VARCHAR(50),
+  email VARCHAR(50), phoneNumber VARCHAR(50), dateCreated DATE
+);
