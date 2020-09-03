@@ -1,0 +1,97 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Contacts website for COP4331 Group 2",
+    "version" : "0.1",
+    "title" : "eyeContacts Site API"
+  },
+  "host" : "plsgiveusana.me",
+  "basePath" : "/api",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/Login.php" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Logs into the eyeContacts app",
+        "description" : "Logs into the eyeContacts app",
+        "operationId" : "doLogin",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "loginItem",
+          "description" : "Login",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Login"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          }
+        }
+      }
+    },
+    "/Register.php" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Register new user into the eyeContacts db",
+        "description" : "Registers a new user into the eyeContacts db",
+        "operationId" : "doRegister",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "registerItem",
+          "description" : "Register",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Register"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Login" : {
+      "type" : "object",
+      "required" : [ "password", "username" ],
+      "properties" : {
+        "username" : {
+          "type" : "string",
+          "example" : "fred"
+        },
+        "password" : {
+          "type" : "string",
+          "example" : "secret"
+        }
+      }
+    },
+    "Register" : {
+      "type" : "object",
+      "required" : [ "password", "username" ],
+      "properties" : {
+        "username" : {
+          "type" : "string",
+          "example" : "fred"
+        },
+        "password" : {
+          "type" : "string",
+          "example" : "secret"
+        }
+      }
+    }
+  }
+}
