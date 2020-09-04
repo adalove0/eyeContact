@@ -17,13 +17,13 @@ function create(){
 				userName: username,
 				passWord: password,
 				VerifiedPassword : verifiedPassword,
-				success: function(textResponse){
-					if(textResponse.indexOf("error") != -1)
-						alert("username or password is wrong");
-					else
-						alert("Login successfull");
-				},
 			},
+			success: function(textResponse){
+				if(textResponse.indexOf("error") != -1)
+					alert("username or password is wrong");
+				else
+					alert("Login successfull");
+				},
 		});
 	}
 }
