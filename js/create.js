@@ -12,7 +12,7 @@ function create(){
 	{
 		$ajax({
 			type: "POST",
-			url: "Register.php.",
+			url: "api/Register.php.",
 			data: {
 				userName: username,
 				passWord: password,
