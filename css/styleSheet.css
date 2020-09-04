@@ -14,7 +14,7 @@ body
 
 .titleText
 {
-  font-family: monospace;
+  font-family:'Fjalla One', sans-serif;
   text-align: center;
   float: center;
 }
@@ -23,7 +23,7 @@ body
 {
   border-color: black;
   text-align: center;
-  font-family: monospace;
+  font-family: 'Fjalla One', sans-serif;
   border-radius: 30px;
   background-color: inherit;
   max-width: 100%;
@@ -36,7 +36,7 @@ body
   border: none;
   text-align: center;
   padding: 6px 10px;
-  font-family: monospace;
+  font-family: 'Fjalla One', sans-serif;
   border-radius: 15px
 }
 
@@ -52,7 +52,7 @@ body
 {
   float: center;
   width: auto%;
-  font-family: monospace;
+  font-family: 'Fjalla One', sans-serif;
   text-align: center;
   background-image: radial-gradient(#FFFFFF, #191970);
   padding: 15px;
