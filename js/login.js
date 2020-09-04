@@ -17,7 +17,7 @@ function login(){
 				passcode : password,
 			},
 			success: function(textResponse){
-				if(textResponse.indexOf("error") != -1)
+				if(textResponse.unameID < 1)
 					alert("username or password is wrong");
 				else
 					alert("Login successfull");
