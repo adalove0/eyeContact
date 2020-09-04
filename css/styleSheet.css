@@ -47,16 +47,16 @@ body
   margin: 8px 0;
   border-radius: 10px;
   border-color: white;
-  font-family: 'Fjalla One', sans-serif;
+  font-family:'Ubuntu', sans-serif;
 }
 .loginAndPassword
 {
   float: center;
-  width: auto%;
+  width: 250px;
   font-family: 'Fjalla One', sans-serif;
   text-align: center;
   background-image: radial-gradient(#FFFFFF, #191970);
-  padding: 15px;
+  padding: 25px;
   margin:auto;
   border-style:solid;
   border-color: white;
