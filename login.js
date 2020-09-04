@@ -11,7 +11,7 @@ function login(){
 	{
 		$ajax({
 			type: "POST",
-			url: "api/login.php",
+			url: "api/Login.php",
 			data: {
 				username: username,
 				passcode : password,
