@@ -26,7 +26,7 @@
 				{
 					$contactResults .= "[";
 				}
-				$contactResults .= '"contactsNumber":"' . $row["contactsNumber"] .'","contactFirstName":"' .
+				$contactResults .= '"contactNumber":"' . $row["contactNumber"] .'","contactFirstName":"' .
 				$row["contactFirstName"] .'","contactLastName":"' . $row["contactLastName"] . '","email":"' .
 				$row["email"] .'","phoneNumber":"' . $row["phoneNumber"] . '","dateCreated":"' . $row["dateCreated"]
 				. '"],';
