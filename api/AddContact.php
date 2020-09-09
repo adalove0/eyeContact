@@ -27,6 +27,7 @@
 		{
 			returnWithError( $conn->error );
 		}
+		returnWithInfo();
 		$conn->close();
 	}	
 	
@@ -39,6 +40,12 @@
 	{
 		header('Content-type: application/json');
 		echo $obj;
+	}
+		
+	function returnWithInfo()
+	{
+		$retValue = '{"error":""}';
+		sendResultInfoAsJson( $retValue );
 	}
 	
 	function returnWithError( $err )
