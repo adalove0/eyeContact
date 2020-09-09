@@ -5,9 +5,9 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
-	$inputUname = $inData["username"];
-	$inputPassword = $inData["password"];
-
+	$searchResults = "";
+	$searchCount = 0;
+	
 	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
 	{
@@ -15,10 +15,24 @@
 	} 
 	else
 	{
-		$sql = "INSERT INTO login_info (username,password) VALUES ('" . $inputUname . "','" . $inputPassword . "')";
-		if( $result = $conn->query($sql) != TRUE )
+		$sql = "SELECT (contactFirstName, contactLastName) 
+		from contacts where contactFirstName LIKE '%" . $inData["search"] 
+		. "%' or contactLastName LIKE '%" . $inData["search"] . " AND unameID=" . $inData["unameID"];
+		$result = $conn->query($sql);
 		{
-			returnWithError( $conn->error );
+			while($row = $result->fetch_assoc())
+			{
+				if( $searchCount > 0 )
+				{
+					$searchResults .= ",";
+				}
+				$searchCount++;
+				$searchResults .= '"' . $row["Name"] . '"';
+			}
+		}
+		else
+		{
+			returnWithError( "No Records Found" );
 		}
 		$conn->close();
 	}	
@@ -36,6 +50,12 @@
 	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
+	
+	function returnWithInfo( $searchResults )
+	{
+		$retValue = '{"results":[' . $searchResults . '],"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
