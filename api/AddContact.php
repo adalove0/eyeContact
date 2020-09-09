@@ -6,10 +6,10 @@
 	$password = "plsdonthackmebro2";
 	
 	$unameID = $inData["unameID"];
-	$contactFirstName = $inData["contactFirstName"]
-	$contactLastName = $inData["contactLastName"]
-	$email = $inData["email"]
-	$phoneNumber = $inData["phoneNumber"]
+	$contactFirstName = $inData["contactFirstName"];
+	$contactLastName = $inData["contactLastName"];
+	$email = $inData["email"];
+	$phoneNumber = $inData["phoneNumber"];
 	$dateCreated = getdate();
 
 	$conn = new mysqli($servername, $username, $password, $database);
@@ -19,15 +19,15 @@
 	} 
 	else
 	{
-		$sql = "INSERT INTO contacts (unameID,contactFirstName,contactLastName,email,phoneNumber,dateCreated) 
-		VALUES ('" . $unameID . "','" . $contactFirstName . "','" . $contactLastName . 
-		"','" . $email . "','" . $phoneNumber . "','" . $dateCreated[2] . $dateCreated[1] . 
-		$dateCreated[0] . "')";
+		$sql = "INSERT INTO contacts (unameID,contactFirstName,contactLastName,email,
+		phoneNumber,dateCreated) VALUES ('" . $unameID . "','" . $contactFirstName . "','" 
+		. $contactLastName . "','" . $email . "','" . $phoneNumber . "','" . $dateCreated[2] 
+		. $dateCreated[1] . $dateCreated[0] . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
 		}
-		
+		returnWithInfo
 		$conn->close();
 	}	
 	function getRequestInfo()
