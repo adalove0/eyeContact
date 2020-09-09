@@ -32,7 +32,7 @@
 				. '"}';
 				$numContacts++;
 			}		
-			$contactResults .= '],'
+			$contactResults .= '],';
 			returnWithInfo( $contactResults, $numContacts );
 		}
 		else
