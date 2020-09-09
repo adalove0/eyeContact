@@ -28,7 +28,7 @@
 				}
 				$contactResults .= '"contactsNumber":"' . $row["contactsNumber"] .'","contactFirstName":"' .
 				$row["contactFirstName"] .'","contactLastName":"' . $row["contactLastName"] . '","email":"' .
-				$row["email"] .'","phoneNumber":"' . $row["phoneNumber"] '","dateCreated":"' . $row["dateCreated"]
+				$row["email"] .'","phoneNumber":"' . $row["phoneNumber"] . '","dateCreated":"' . $row["dateCreated"]
 				. '"]';
 				$numContacts++;
 			}			

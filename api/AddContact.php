@@ -22,7 +22,7 @@
 		$sql = "INSERT INTO contacts (unameID,contactFirstName,contactLastName,email,
 		phoneNumber,dateCreated) VALUES ('" . $unameID . "','" . $contactFirstName . "','" 
 		. $contactLastName . "','" . $email . "','" . $phoneNumber . "','" . $dateCreated["year"] 
-		. "-" . $dateCreated[mon] . "-" . $dateCreated[mday] . "')";
+		. "-" . $dateCreated["mon"] . "-" . $dateCreated["mday"] . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
@@ -34,7 +34,13 @@
 	{
 		return json_decode(file_get_contents('php://input'), true);
 	}
-
+	
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		echo $obj;
+	}
+	
 	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
