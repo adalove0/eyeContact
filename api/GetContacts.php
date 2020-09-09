@@ -60,7 +60,7 @@
 	
 	function returnWithInfo( $contactResults )
 	{
-		$retValue = $contactResults . '"numContacts":' . numContacts . ',"error":""}';
+		$retValue = $contactResults . '"numContacts":' . $numContacts . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
