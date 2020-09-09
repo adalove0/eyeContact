@@ -32,7 +32,7 @@
 				. '"],';
 				$numContacts++;
 			}			
-			returnWithInfo($contactResults);
+			returnWithInfo( $contactResults, $numContacts );
 		}
 		else
 		{
@@ -58,7 +58,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $contactResults )
+	function returnWithInfo( $contactResults, $numContacts )
 	{
 		$retValue = $contactResults . '"numContacts":' . $numContacts . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
