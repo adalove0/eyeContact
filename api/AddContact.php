@@ -19,7 +19,7 @@
 	} 
 	else
 	{
-		$sql = "INSERT INTO contacts (unameID,contactFirstName,contactLastName,email,phoneNumber) 
+		$sql = "INSERT INTO contacts (unameID,contactFirstName,contactLastName,email,phoneNumber,dateCreated) 
 		VALUES ('" . $unameID . "','" . $contactFirstName . "','" . $contactLastName . 
 		"','" . $email . "','" . $phoneNumber . "','" . $dateCreated[2] . $dateCreated[1] . 
 		$dateCreated[0] . "')";
