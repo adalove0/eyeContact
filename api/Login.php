@@ -51,7 +51,7 @@
 	
 	function returnWithInfo( $unameID )
 	{
-		$retValue = '{"unameID":' . $unameID . ',"error":""}';
+		$retValue = '{"unameID":"' . $unameID . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
