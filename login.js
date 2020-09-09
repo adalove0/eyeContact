@@ -1,7 +1,7 @@
 function login()
 {
     var id = 0;
-    var url = 'http://plsgiveusana.me/API/Login.php';
+    var url = 'http://plsgiveusana.me/api/Login.php';
     var username = document.getElementById("Login").value;
     var password = document.getElementById("Password").value;
     var data = '{"username" :"'+username+'", "password" :"' +password + '"}';
