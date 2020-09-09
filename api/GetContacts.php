@@ -16,7 +16,7 @@
 	} 
 	else
 	{
-		$sql = "SELECT * FROM contacts where unameID='" . $inputUname . "'";
+		$sql = "SELECT * FROM contacts where unameID='" . $unameID . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
