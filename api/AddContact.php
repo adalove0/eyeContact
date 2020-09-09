@@ -21,26 +21,20 @@
 	{
 		$sql = "INSERT INTO contacts (unameID,contactFirstName,contactLastName,email,
 		phoneNumber,dateCreated) VALUES ('" . $unameID . "','" . $contactFirstName . "','" 
-		. $contactLastName . "','" . $email . "','" . $phoneNumber . "','" . $dateCreated[2] 
-		. $dateCreated[1] . $dateCreated[0] . "')";
+		. $contactLastName . "','" . $email . "','" . $phoneNumber . "','" . $dateCreated["year"] 
+		. "-" . $dateCreated[mon] . "-" . $dateCreated[mday] . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
 		}
-		returnWithInfo
 		$conn->close();
 	}	
+	
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
 	}
 
-	function sendResultInfoAsJson( $obj )
-	{
-		header('Content-type: application/json');
-		echo $obj;
-	}
-	
 	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
