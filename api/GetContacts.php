@@ -24,7 +24,7 @@
 			{
 				if( $numContacts > 0 )
 				{
-					$searchResults .= ",";
+					$contactResults .= ",";
 				}
 				$contactResults .= '"contactsNumber":"' . $row["contactsNumber"] .'","contactFirstName":"' .
 				$row["contactFirstName"] .'","contactLastName":"' . $row["contactLastName"] . '","email":"' .
