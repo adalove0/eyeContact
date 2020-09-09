@@ -6,7 +6,7 @@
 	$password = "plsdonthackmebro2";
 	
 	$unameID = $inData["unameID"];;
-	$contactResults = '{"contacts":[';
+	$contactResults = '{"contacts":[{';
 	$numContacts = 0;
 	
 	$conn = new mysqli($servername, $username, $password, $database);
@@ -55,7 +55,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"contacts":"[[]]","numContacts":0,"error":"' . $err . '"}';
+		$retValue = '{"contacts":"[{}]","numContacts":0,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
