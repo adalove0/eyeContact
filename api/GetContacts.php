@@ -58,7 +58,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $unameID )
+	function returnWithInfo( $contactResults )
 	{
 		$retValue = $contactResults . '"numContacts":' . numContacts . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
