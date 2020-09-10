@@ -1,7 +1,7 @@
 function create(){
     var username =  $("#Username").val();
 	var password =  $("#Password").val();
-	var VerifiedPassword =  $("#verify").val();
+	var verifiedPassword =  $("#verify").val();
 	if(username == "" || password == "" || verifiedPassword == "")
 		alert("Please enter all required fields");
 	else
