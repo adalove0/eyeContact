@@ -10,13 +10,13 @@ $(document).ready(function(){
                 verifiedPassword: $("#verify").val(),
                 success: function(data){
                     if(password != verifiedPassword)
-                        $("#msg1").html("Passwords don't match");
+                        alert("Passwords don't match");
                     else
                     {
                         if(data == "error")
-                            $("#msg1").html("Username already used");
+                           alert("Username already used");
                         else
-                            $("msg1").html("Account created");
+                            alert.html("Account created");
                     }
                        
                 },
