@@ -5,6 +5,7 @@ body
   /* Define a border */
   background-repeat: no-repeat;
   background-size:cover;
+  background-attachment: fixed;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -77,7 +78,7 @@ body
   background-image: radial-gradient(#FFFFFF, #191970);
   padding: 25px;
   margin:auto;
-  text-align: center;
+  text-align: left;
   border-style:solid;
   border-color: white;
   /*Centering Vertically and Horizontally*/
