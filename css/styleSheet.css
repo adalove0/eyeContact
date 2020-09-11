@@ -37,7 +37,8 @@ body
   text-align: center;
   padding: 6px 10px;
   font-family: 'Fjalla One', sans-serif;
-  border-radius: 15px
+  border-radius: 60px;
+  font-size: 0.8vw;
 }
 
 .form
@@ -49,6 +50,7 @@ body
   border-color: white;
   font-family:'Ubuntu', sans-serif;
 }
+
 .loginAndPassword
 {
   float: center;
@@ -58,6 +60,24 @@ body
   background-image: radial-gradient(#FFFFFF, #191970);
   padding: 25px;
   margin:auto;
+  border-style:solid;
+  border-color: white;
+  /*Centering Vertically and Horizontally*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.viewTable
+{
+  width: 250px;
+  font-family:'Fjalla One',  sans-serif;
+  background-image: radial-gradient(#FFFFFF, #191970);
+  padding: 25px;
+  margin:auto;
+  text-align: center;
   border-style:solid;
   border-color: white;
   /*Centering Vertically and Horizontally*/
