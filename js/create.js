@@ -16,7 +16,7 @@ $(document).ready(function(){
                         if(data == "error")
                            alert("Username already used");
                         else
-                            alert.html("Account created");
+                            alert("Account created");
                     }
                        
                 },
