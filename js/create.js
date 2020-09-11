@@ -1,25 +1,27 @@
-function create(){
-    var username =  $("#Username").val();
-	var password =  $("#Password").val();
-	var verifiedPassword =  $("#verify").val();
-	if(username == "" || password == "" || verifiedPassword == "")
-		alert("Please enter all required fields");
-	else
-	{
-		$ajax({
-			type: "POST",
-			url: "api/Register.php.",
-			data: {
-				userName: username,
-				passWord: password,
-				VerifiedPassword : verifiedPassword,
-			},
-			success: function(textResponse){
-				if(textResponse.error!= "")
-					alert("username or password is wrong");
-				else
-					alert("Login successfull");
-				},
-		});
-	}
-}
+$("#ajaxform").submit(function(e){
+$(document).ready(function(){
+    $("#createUserButton").on("click",function(){
+        $.ajax({
+            type: "POST",
+            url: "Register.php",
+            data: {
+                username: $("#Username").val(),
+                password: $("#Password").val(),
+                verifiedPassword: $("#verify").val(),
+                success: function(data){
+                    if(password != verifiedPassword)
+                        $("#msg1").html("Passwords don't match");
+                    else
+                    {
+                        if(data == "error")
+                            $("#msg1").html("Username already used");
+                        else
+                            $("msg1").html("Account created");
+                    }
+                       
+                },
+            },
+        });
+      });
+    });
+  });
