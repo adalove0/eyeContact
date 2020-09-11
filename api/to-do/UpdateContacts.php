@@ -5,9 +5,10 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
+	$unameID = 0;
 	$inputUname = $inData["username"];
 	$inputPassword = $inData["password"];
-
+	
 	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
 	{
@@ -15,14 +16,22 @@
 	} 
 	else
 	{
-		$sql = "INSERT INTO login_info (username,password) VALUES ('" . $inputUname . "','" . $inputPassword . "')";
-		if( $result = $conn->query($sql) != TRUE )
+		$sql = "SELECT unameID FROM login_info where username='" . $inputUname . "' and password='" . $inputPassword . "'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0)
 		{
-			returnWithError( $conn->error );
+			$row = $result->fetch_assoc();
+			$unameID = $row["unameID"];
+			
+			returnWithInfo($unameID);
 		}
-		returnWithInfo();
+		else
+		{
+			returnWithError( "No Records Found" );
+		}
 		$conn->close();
-	}	
+	}
+	
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
@@ -34,15 +43,15 @@
 		echo $obj;
 	}
 	
-	function returnWithInfo()
+	function returnWithError( $err )
 	{
-		$retValue = '{"error":""}';
+		$retValue = '{"unameID":0,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithError( $err )
+	function returnWithInfo( $unameID )
 	{
-		$retValue = '{"error":"' . $err . '"}';
+		$retValue = '{"unameID":' . $unameID . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

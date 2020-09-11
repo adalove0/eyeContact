@@ -1,27 +1,32 @@
-function login(){
-	var script = document.createElement("SCRIPT");
-    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
-    script.type = 'text/javascript';
-    document.getElementsByTagName("head")[0].appendChild(script);
-	var username =  $("#Login").val();
-	var password =  $("#Password").val();
-	if(username == "" || password == "")
-		alert("Please enter all required fields");
-	else
-	{
-		$ajax({
-			type: "POST",
-			url: "api/Login.php",
-			data: {
-				username: username,
-				passcode : password,
-			},
-			success: function(textResponse){
-				if(textResponse.unameID < 1)
-					alert("username or password is wrong");
-				else
-					alert("Login successfull");
-			},
-		});
-	}
+function login()
+{
+    var id = 0;
+    var url = 'http://plsgiveusana.me/api/Login.php';
+    var username = document.getElementById("Login").value;
+    var password = document.getElementById("Password").value;
+    var data = '{"username" :"'+username+'", "password" :"' +password + '"}';
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST",url,false);
+    xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+    try
+    {
+        xhr.send(data);
+        var response = JSON.parse(xhr.responseText);
+        id = response["unameID"];
+        if( id == 0)
+        {
+            alert("Username/Password combination is wrong");
+            return;
+        }
+        else
+        {
+            alert("Correct!!")
+        }
+    }
+    catch(err)
+    {
+        alert(err.message);
+    }
+    document.getElementById("Login").value = "";
+    document.getElementById("Password").value = "";
 }
