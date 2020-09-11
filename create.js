@@ -13,7 +13,7 @@ $(document).ready(function(){
                         alert("Passwords don't match");
                     else
                     {
-                        if(data == "error")
+                        if(data.error == "")
                            alert("Username already used");
                         else
                             alert("Account created");
