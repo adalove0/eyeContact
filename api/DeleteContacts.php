@@ -14,7 +14,7 @@
 	} 
 	else
 	{
-		$sql = "DELETE * from contacts where contactNumber = '" . $contactNumber ."'";
+		$sql = "DELETE * from contacts where contactNumber=" . $contactNumber;
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
