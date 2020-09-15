@@ -12,7 +12,7 @@ unction addContact(){
     {
         xhr.send(data);
         var response = JSON.parse(xhr.responseText);
-        var error = response["error"];
+        var error = response.error;
         if(error == "")
         {
             alert("Error");
