@@ -16,9 +16,8 @@
 	else
 	{
 	# select * from contacts where (first like '%abc%' or last like '%abc%')and userid = unameID;
-		$sql = "SELECT (contactFirstName, contactLastName) 
-		from contacts where contactFirstName LIKE '%" . $inData["search"] 
-		. "%' or contactLastName LIKE '%" . $inData["search"] . " AND unameID=" . $inData["unameID"];
+		$sql = "SELECT * from contacts where (contactFirstName LIKE '%" . $inData["search"] 
+		. "%' or contactLastName LIKE '%" . $inData["search"] . "%') AND unameID=" . $inData["unameID"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc())
