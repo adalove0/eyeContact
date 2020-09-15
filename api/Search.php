@@ -63,6 +63,3 @@
 	}
 	
 ?>
-can't parse JSON.  Raw result:
-
-{"results":[{"contactNumber":"1","contactFirstName":"Ethan","contactLastName":"Harris"},{"contactNumber":"2","contactFirstName":"mike","contactLastName":"tyson"},{"contactNumber":"3","contactFirstName":"mike","contactLastName":"tyson"}],"numResults":"error":""}
