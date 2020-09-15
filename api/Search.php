@@ -16,8 +16,8 @@
 	else
 	{
 	# select * from contacts where (first like '%abc%' or last like '%abc%')and userid = unameID;
-		$sql = "SELECT * from contacts where (contactFirstName LIKE '%" . $inData["search"] 
-		. "%' or contactLastName LIKE '%" . $inData["search"] . "%') AND unameID=" . $inData["unameID"];
+		$sql = "SELECT * from contacts where (contactFirstName LIKE '%" . $inData["searchString"] 
+		. "%' or contactLastName LIKE '%" . $inData["searchString"] . "%') AND unameID=" . $inData["unameID"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc())
@@ -31,7 +31,7 @@
 				$numResults++;
 			}
 			$searchResults .= '],';
-			returnWithInfo( $searchResults, $searchCount );
+			returnWithInfo( $searchResults, $numResults );
 		}
 		else
 		{
@@ -58,8 +58,11 @@
 	
 	function returnWithInfo( $searchResults, $numResults )
 	{
-		$retValue = $searchResults . '"numResults":' . $numResults .'"error":""}';
+		$retValue = $searchResults . '"numResults":' . $numResults .',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
 ?>
+can't parse JSON.  Raw result:
+
+{"results":[{"contactNumber":"1","contactFirstName":"Ethan","contactLastName":"Harris"},{"contactNumber":"2","contactFirstName":"mike","contactLastName":"tyson"},{"contactNumber":"3","contactFirstName":"mike","contactLastName":"tyson"}],"numResults":"error":""}
