@@ -1,97 +1,269 @@
-{
-  "swagger" : "2.0",
-  "info" : {
-    "description" : "Contacts website for COP4331 Group 2",
-    "version" : "0.1",
-    "title" : "eyeContacts Site API"
-  },
-  "host" : "plsgiveusana.me",
-  "basePath" : "/api",
-  "schemes" : [ "http" ],
-  "paths" : {
-    "/Login.php" : {
-      "post" : {
-        "tags" : [ "Users" ],
-        "summary" : "Logs into the eyeContacts app",
-        "description" : "Logs into the eyeContacts app",
-        "operationId" : "doLogin",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "loginItem",
-          "description" : "Login",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/Login"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK"
-          },
-          "404" : {
-            "description" : "URL Not Found"
-          }
-        }
-      }
-    },
-    "/Register.php" : {
-      "post" : {
-        "tags" : [ "Users" ],
-        "summary" : "Register new user into the eyeContacts db",
-        "description" : "Registers a new user into the eyeContacts db",
-        "operationId" : "doRegister",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "registerItem",
-          "description" : "Register",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/Register"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK"
-          },
-          "404" : {
-            "description" : "URL Not Found"
-          }
-        }
-      }
-    }
-  },
-  "definitions" : {
-    "Login" : {
-      "type" : "object",
-      "required" : [ "password", "username" ],
-      "properties" : {
-        "username" : {
-          "type" : "string",
-          "example" : "fred"
-        },
-        "password" : {
-          "type" : "string",
-          "example" : "secret"
-        }
-      }
-    },
-    "Register" : {
-      "type" : "object",
-      "required" : [ "password", "username" ],
-      "properties" : {
-        "username" : {
-          "type" : "string",
-          "example" : "fred"
-        },
-        "password" : {
-          "type" : "string",
-          "example" : "secret"
-        }
-      }
-    }
-  }
-}
+swagger: '2.0'
+info:
+  version: '0.1'
+  title: eyeContacts Site API
+  description: Contacts website for COP4331 Group 2
+paths: 
+  /Login.php:
+    post:
+      tags:
+      - Users
+      summary: Logs into the eyeContacts app
+      operationId: doLogin
+      description: Logs into the eyeContacts app
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: loginItem
+        description: Login
+        schema:
+          $ref: '#/definitions/Login'
+      responses:
+        200:
+          description: OK
+        404: 
+          description: URL Not Found
+  /Register.php:
+    post:
+      tags:
+      - Users
+      summary: Register new user into the eyeContacts db
+      operationId: doRegister
+      description: Registers a new user into the eyeContacts db
+      consumes: 
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: registerItem
+        description: Register
+        schema:
+          $ref: '#/definitions/Register'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+  /GetContacts.php:
+    post:
+      tags:
+      - Contacts
+      summary: Returns a user's contact list
+      operationId: getContacts
+      description: Finds all contacts associated with a specific unameID and returns them to the caller
+      consumes: 
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: user identifier
+        description: user's specific unameID
+        schema:
+          $ref: '#/definitions/GetContacts'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+  /AddContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Create a new contact
+      operationId: createContact
+      description: Given a unameID, and relevant contact info, inputs the new user into the user's contact list
+      consumes: 
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: user identifier
+        description: user's specific unameID
+        schema:
+          $ref: '#/definitions/CreateContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+  /Search.php:
+    post:
+      tags:
+      - Contacts
+      summary: Searches for a contact based on a given substring
+      operationId: search
+      description: Given a small search string and unameID, returns a list of contacts containing that substring.
+      consumes: 
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: search string
+        description: input substring and unameID of requesting user
+        schema:
+          $ref: '#/definitions/Search'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+  /UpdateContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Updates a contact's information
+      operationId: UpdateContact
+      description: Given a unameID, contact, returns a list of contacts containing that substring.
+      consumes: 
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: updateContact
+        description: input a contactID, userID, and new contact information to update
+        schema:
+          $ref: '#/definitions/UpdateContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found      
+  /DeleteContacts.php:
+    post:
+      tags:
+      - Contacts
+      summary: Delete a selected contact
+      operationId: deleteContact
+      description: Given a contactNumber, delete that contact.
+      consumes: 
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contact
+        description: input a contactID to delete the contact
+        schema:
+          $ref: '#/definitions/Contact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found 
+definitions:
+  Login:
+    type: object
+    required:
+    - username
+    - password
+    properties:
+      username:
+        type: string
+        example: "fred"
+      password:
+        type: string
+        example: "secret"
+  Register:
+    type: object
+    required:
+    - username
+    - password
+    properties:
+      username:
+        type: string
+        example: "fred"
+      password:
+        type: string
+        example: "secret"
+  GetContacts:
+    type: object
+    required:
+    - unameID
+    properties:
+      unameID:
+        type: number
+        example: 3
+  CreateContact:
+    type: object
+    required:
+    - unameID
+    - contactFirstName
+    - contactLastName
+    - email
+    - phoneNumber
+    properties:
+      unameID:
+        type: number
+        example: 3
+      contactFirstName:
+        type: string
+        example: "mike"
+      contactLastName:
+        type: string
+        example: "tyson"
+      email:
+        type: string
+        example: "me@punchout.you"
+      phoneNumber:
+        type: string
+        example: "867-5309"
+  Search:
+    type: object
+    required:
+    - unameID
+    - searchString
+    properties:
+      unameID:
+        type: number
+        example: 3   
+      searchString:
+        type: string
+        example: "mik"
+  UpdateContact:
+    type: object
+    required:
+    - unameID
+    - contactNumber
+    - contactFirstName
+    - contactLastName
+    - email
+    - phoneNumber
+    properties:
+      unameID:
+        type: number
+        example: 3
+      contactNumber:
+        type: number
+        example: 4
+      contactFirstName:
+        type: string
+        example: "mike"
+      contactLastName:
+        type: string
+        example: "tyson"
+      email:
+        type: string
+        example: "me@punchout.you"
+      phoneNumber:
+        type: string
+        example: "867-5309"  
+  Contact:
+    type: object
+    required:
+    - contactNumber
+    properties:
+      contactNumber:
+        type: number
+        example: 8
+host: plsgiveusana.me
+basePath: /api
+schemes:
+- http
