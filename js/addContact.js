@@ -28,7 +28,7 @@ unction addContact(){
         alert(err.message);
     }
     document.getElementById("firstName").value = "";
-	document.getElementById("lastName").value = "";
-	document.getElementById("phone").value ="";
-	document.getElementById("email").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("phone").value ="";
+    document.getElementById("email").value = "";
  }
