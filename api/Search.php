@@ -5,8 +5,8 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
-	$searchResults = "";
-	$searchCount = 0;
+	$searchResults = '{"results":[{';
+	$numResults = 0;
 	
 	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
@@ -20,16 +20,19 @@
 		from contacts where contactFirstName LIKE '%" . $inData["search"] 
 		. "%' or contactLastName LIKE '%" . $inData["search"] . " AND unameID=" . $inData["unameID"];
 		$result = $conn->query($sql);
-		{
+		if ($result->num_rows > 0)
 			while($row = $result->fetch_assoc())
 			{
-				if( $searchCount > 0 )
+				if( $numResults > 0 )
 				{
-					$searchResults .= ",";
+					$searchResults .= ",{";
 				}
-				$searchCount++;
-				$searchResults .= '"' . $row["Name"] . '"';
+				$searchResults .= '"contactNumber":"' . $row["contactNumber"] . '","contactFirstName":"' . 
+				$row["contactFirstName"] . '","contactLastName":"' . $row["contactLastName"] . '"}';
+				$numResults++;
 			}
+			$searchResults .= '],';
+			returnWithInfo( $searchResults, $searchCount );
 		}
 		else
 		{
@@ -50,13 +53,13 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"error":"' . $err . '"}';
+		$retValue = '{"results":"[{}]","numContacts":0,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $searchResults )
+	function returnWithInfo( $searchResults, $numResults )
 	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
+		$retValue = $searchResults . '"numResults":' . $numResults .'"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
