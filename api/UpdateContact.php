@@ -49,7 +49,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $unameID )
+	function returnWithInfo()
 	{
 		$retValue = '{"error":""}';
 		sendResultInfoAsJson( $retValue );
