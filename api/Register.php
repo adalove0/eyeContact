@@ -20,7 +20,8 @@
 		{
 			returnWithError( $conn->error );
 		}
-		returnWithInfo();
+		else 
+			returnWithInfo();
 		$conn->close();
 	}	
 	function getRequestInfo()
