@@ -1,9 +1,5 @@
 <?php
 	$inData = getRequestInfo();
-	$servername = "localhost";
-	$database = "eyeContacts";
-	$username = "creator";
-	$password = "plsdonthackmebro2";
 	
 	$unameID = $inData["unameID"];
 	$contactFirstName = $inData["contactFirstName"];
@@ -12,7 +8,7 @@
 	$phoneNumber = $inData["phoneNumber"];
 	$dateCreated = getdate();
 
-	$conn = new mysqli($servername, $username, $password, $database);
+	$conn = new mysqli();
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
