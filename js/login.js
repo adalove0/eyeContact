@@ -20,7 +20,8 @@ function login()
         }
         else
         {
-            alert("Correct!!")
+            alert("Correct!!");
+            window.location.href = "../contactListPage.html";
         }
     }
     catch(err)
