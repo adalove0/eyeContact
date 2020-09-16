@@ -3,7 +3,7 @@ function login()
     var id = 0;
     var url = 'http://plsgiveusana.me/api/Login.php';
     var username = document.getElementById("Login").value;
-    var password = document.getElementById("Password").value;
+    var password = MD5(document.getElementById("Password").value);
     var data = '{"username" :"'+username+'", "password" :"' +password + '"}';
     let xhr = new XMLHttpRequest();
     xhr.open("POST",url,false);
