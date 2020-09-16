@@ -1,11 +1,15 @@
 <?php
 	$inData = getRequestInfo();
+	$servername = "localhost";
+	$database = "eyeContacts";
+	$username = "creator";
+	$password = "plsdonthackmebro2";
 	
 	$unameID = 0;
 	$inputUname = $inData["username"];
 	$inputPassword = $inData["password"];
 	
-	$conn = new mysqli_connect();
+	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
