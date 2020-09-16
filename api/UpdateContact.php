@@ -18,10 +18,9 @@
 	} 
 	else
 	{
-		# UPDATE contacts SET contactFirstName=name, contactLastName=name, email=email, phoneNumber=phoneNumber WHERE contactNumber=contactNumber;
 		$sql = "UPDATE contacts SET contactFirstName='" . $newFirstName . "', contactLastName='" . $newLastName . "',email='" 
 		. $newEmail . "', phoneNumber='" . $newPhoneNumber . "' WHERE contactNumber=" . $contactNumber;
-		if( $result = $conn->query($sql) != TRUE )
+		if( !$result = $conn->query($sql) )
 		{
 			returnWithError( $conn->error );
 		}
