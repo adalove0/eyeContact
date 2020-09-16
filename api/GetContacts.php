@@ -5,7 +5,7 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
-	$unameID = $inData["unameID"];;
+	$unameID = $inData["unameID"];
 	$contactResults = '{"contacts":[{';
 	$numContacts = 0;
 	
