@@ -5,7 +5,7 @@
 	$inputUname = $inData["username"];
 	$inputPassword = $inData["password"];
 	
-	$conn = new mysqli();
+	$conn = new mysqli_connect();
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
