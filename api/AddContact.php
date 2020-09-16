@@ -23,7 +23,7 @@
 		phoneNumber,dateCreated) VALUES ('" . $unameID . "','" . $contactFirstName . "','" 
 		. $contactLastName . "','" . $email . "','" . $phoneNumber . "','" . $dateCreated["year"] 
 		. "-" . $dateCreated["mon"] . "-" . $dateCreated["mday"] . "')";
-		if( $result = $conn->query($sql) != TRUE )
+		if( !$result = $conn->query($sql) )
 		{
 			returnWithError( $conn->error );
 		}
