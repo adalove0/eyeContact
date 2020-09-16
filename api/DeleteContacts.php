@@ -15,12 +15,14 @@
 	else
 	{
 		$sql = "DELETE FROM contacts where contactNumber=" . $contactNumber;
-		if( $result = $conn->query($sql) != TRUE )
+		if( !$result = $conn->query($sql) )
 		{
 			returnWithError( $conn->error );
 		}
 		else
+		{
 			returnWithInfo();
+		}
 		$conn->close();
 	}	
 	function getRequestInfo()
