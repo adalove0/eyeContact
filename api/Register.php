@@ -21,7 +21,9 @@
 			returnWithError( $conn->error );
 		}
 		else 
+		{
 			returnWithInfo();
+		}
 		$conn->close();
 	}	
 	function getRequestInfo()
