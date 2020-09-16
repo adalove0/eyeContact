@@ -15,7 +15,6 @@
 	} 
 	else
 	{
-	# select * from contacts where (first like '%abc%' or last like '%abc%')and userid = unameID;
 		$sql = "SELECT * from contacts where (contactFirstName LIKE '%" . $inData["searchString"] 
 		. "%' or contactLastName LIKE '%" . $inData["searchString"] . "%') AND unameID=" . $inData["unameID"];
 		$result = $conn->query($sql);
