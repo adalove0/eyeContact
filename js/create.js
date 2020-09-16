@@ -13,6 +13,7 @@ function create(){
 		alert("Passwords don't match");
 		return;
 	}
+	password = MD5(password);
 	var data= '{"username" : "' + username +'", "password" : "' + password + '"}';
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST",url,false);
