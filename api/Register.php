@@ -16,7 +16,7 @@
 	else
 	{
 		$sql = "INSERT INTO login_info (username,password) VALUES ('" . $inputUname . "','" . $inputPassword . "')";
-		if( $result = $conn->query($sql) != TRUE )
+		if( !$result = $conn->query($sql) )
 		{
 			returnWithError( $conn->error );
 		}
