@@ -21,7 +21,7 @@ function login()
         else
         {
             alert("Correct!!");
-            window.location.href = "../contactListPage.html";
+            window.location.href = "../createUser.html";
         }
     }
     catch(err)
