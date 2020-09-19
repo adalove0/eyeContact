@@ -6,6 +6,9 @@
 	$password = "plsdonthackmebro2";
 	
 	$unameID = 0;
+	$userFirstName = "";
+	$userLastName = "";
+	
 	$inputUname = $inData["username"];
 	$inputPassword = $inData["password"];
 	
@@ -16,14 +19,16 @@
 	} 
 	else
 	{
-		$sql = "SELECT unameID FROM login_info where username='" . $inputUname . "' and password='" . $inputPassword . "'";
+		$sql = "SELECT (unameID, userFirstName, userLastName) FROM login_info where username='" . $inputUname . "' and password='" . $inputPassword . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
 			$row = $result->fetch_assoc();
 			$unameID = $row["unameID"];
+			$userFirstName = $row["userFirstName"];
+			$userLastName = $row["userLastName"];
 			
-			returnWithInfo($unameID);
+			returnWithInfo( $unameID, $userFirstName, $userLastName );
 		}
 		else
 		{
@@ -45,13 +50,13 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"unameID":0,"error":"' . $err . '"}';
+		$retValue = '{"unameID":0,"userFirstName":"","userLastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $unameID )
+	function returnWithInfo( $unameID, $userFirstName, $userLastName )
 	{
-		$retValue = '{"unameID":"' . $unameID . '","error":""}';
+		$retValue = '{"unameID":"' . $unameID . '","userFirstName":"' . $userFirstName . '","userLastName":"' . $userLastName '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
