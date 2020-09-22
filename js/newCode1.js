@@ -88,13 +88,13 @@
         var text = document.cookie;
         var dataArrays = text.split(";");
         var currData = dataArrays[0].split("=");
-        if(currData == "id")
-            userID = parseInt(currData[0].trim());
+        if(currData[0] == "id")
+            userID = parseInt(currData[1].trim());
         console.log(userID);
 
         if( userID < 0 )
         {
-            window.location.href = "LandingPage.html";
+            console.log(userID);
         }
        
             console.log(userID);//display name
