@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Information</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="js/newCode1.js">LINK TO JS CODE</script>
+    <script>
+  document.addEventListener('DOMContentLoaded',function()
+  {
+    readCookie();
+  },false);
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Ubuntu:wght@300;400;500&display=swap" rel="styleSheet">
+</head>
+<style>
+  body
+  {
+    background-color: #281E5D;
+    margin: 0;
+  }
+  * {
+  box-sizing: border-box;
+}
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+tr
+{
+  height: 80px;
+}
+
+.searchPlace
+{
+  border: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 10px;
+}
+.new-form
+{
+    border-top-left-radius: 3%;
+   border-bottom-left-radius : 3%;
+  background-color: white;
+  height: 600px;
+}
+label
+{
+ font-size:14px;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+  form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+
+}
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#clickableAwesomeFont {
+     float: right;
+     cursor: pointer
+}
+#contactView{
+  border-top-left-radius: 3%;
+   border-bottom-left-radius : 3%;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+#big-container, #edit-container{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-color: transparent;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 22px;
+}
+#user-img{
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#search-button
+{
+  background-color: #281E5D;
+}
+#clickableAwesomeFont
+{
+  color: #281E5D;
+}
+.accordion
+{
+  padding: 25px;
+}
+.searchBar
+{
+  width: 70%;
+  margin: 0 auto;
+}
+#container
+{   border-top-left-radius: 3%;
+   border-bottom-left-radius : 3%;
+  float: right;
+  width: 50%;
+  height: 100vh;
+}
+</style>
+<body>
+  <div id="container">
+  <div id = "contactView" style="display:block;">
+    <img src="images/phone.png">
+    <div class="search">
+      <h3 class="title-text"> &nbsp;&nbsp;&nbsp;&nbsp;Contacts
+        <span id='clickableAwesomeFont'>
+          <i href="#" style="font-size:24px" class="fa plus">&#xf067;</i>
+        </span>
+   </h3>
+    </div>
+    <div class = "searchBar">
+    <form class="example">
+      <input type="text" placeholder="Search.." class="searchPlace" id="search-target" name="search">
+      <button type="submit" id ="search-button" onclick="search()"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+   <table id="displayTable" class="displayTable">
+      <tbody id="display-table">
+      </tbody>
+    </table>
+  </div>
+</div>
+  <div id = "big-container" ></div>
+  <div id ="edit-container"></div>
+    <script> read()</script>
+</body>
