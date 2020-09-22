@@ -114,6 +114,11 @@
         var ContactLastName = document.getElementById("lastName").value;
         var phone = document.getElementById("phone").value;
         var email = document.getElementById("email").value;
+        console.log(ContactFirstName);
+        console.log(ContactLastName);
+        console.log(email);
+        console.log(phone);
+        console.log(userID );
         readCookie();
         var data = '{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
         alert(userID );
