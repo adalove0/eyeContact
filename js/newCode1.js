@@ -121,9 +121,9 @@
         console.log(email);
         console.log(phone);
         console.log(userID );
-     alert("hi!!);
+     alert("hi!!");
         readCookie();
-     alert("hhhi!!);
+     alert("hhhi!!");
         var data = '{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
         alert(userID );
         alert(ContactFirstName);
