@@ -108,7 +108,7 @@
         var phone = document.getElementById("phone").value;
         var email = document.getElementById("email").value;
         readCookie();
-        var data = '{"unameID" : "' + id + '", "contactFirstName" :"' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName + '" + "contactLastName" :"' +password + '" ,"email" :"'+email+'", "phoneNumber" :"' +phone + '"}';
+        var data = '{"unameID" : "' + id + '", "contactFirstName" :"' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" :"'+email+'", "phoneNumber" :"' +phone + '"}';
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
