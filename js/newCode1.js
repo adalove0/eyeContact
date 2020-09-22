@@ -140,6 +140,7 @@
         {
             alert(err.message);
         }
+        console.log(data);
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = "";
         document.getElementById("phone").value ="";
