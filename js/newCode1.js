@@ -64,7 +64,7 @@
                 firstName = response["firstName"];
                 lastName = response["lastName"];
                 saveCookie();
-                window.location.href = "newPage.html";
+                window.location.href = "test-page.html";
             }
         }
         catch(err)
