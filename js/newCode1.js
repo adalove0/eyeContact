@@ -1,4 +1,4 @@
- var id = 0;
+ var userID = 0;
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
         var username = document.getElementById("Username").value;
@@ -41,7 +41,7 @@
     }
     function login()
     {
-        id = 0;
+        userID = 0;
         var url = 'http://plsgiveusana.me/api/Login.php';
         var username = document.getElementById("Login").value;
         var password = MD5(document.getElementById("Password").value);
@@ -53,8 +53,8 @@
         {
             xhr.send(data);
             var response = JSON.parse(xhr.responseText);
-            id = response["unameID"];
-            if( id == 0)
+            userID = response["unameID"];
+            if( userID == 0)
             {
                 alert("Username/Password combination is wrong");
                 return;
@@ -77,26 +77,26 @@
         var minutes = 20;
         var date = new Date();
         date.setTime(date.getTime()+(minutes*60*1000));
-        document.cookie = "id="+ id + ";expires=" + date.toUTCString();
+        document.cookie = "id="+ userID + ";expires=" + date.toUTCString();
     }
     function readCookie()
     {
-        id = -1;
+        userID = -1;
         var dataArrays = (document.cookie).split("=");
-        id = parseInt(dataArrays[0].trim());
+        userID = parseInt(dataArrays[0].trim());
 
-        if( id < 0 )
+        if( userID < 0 )
         {
             window.location.href = "LandingPage.html";
         }
        
-            console.log(id);//display name
+            console.log(userID);//display name
  
     }
 
     function logout()
     {
-        id = 0;
+        userID = 0;
         document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
         window.location.href = "LandingPage.html";
     }
@@ -108,7 +108,7 @@
         var phone = document.getElementById("phone").value;
         var email = document.getElementById("email").value;
         readCookie();
-        var data = '{"unameID" : "' + id + '", "contactFirstName" :"' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" :"'+email+'", "phoneNumber" :"' +phone + '"}';
+        var data = '{"unameID" : "' + userID + '", "contactFirstName" :"' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" :"'+email+'", "phoneNumber" :"' +phone + '"}';
         console.log(data);
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
@@ -151,7 +151,7 @@ function read()
             window.location.href = "addContact.html";
         });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
-         var data= '{"unameID" : "' + id + '"}';
+         var data= '{"unameID" : "' + userID + '"}';
          var xhr = new XMLHttpRequest();
          xhr.open("POST",url,true);
          xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -402,7 +402,7 @@ function search()
   alert("YES");
   var searchTarget = document.getElementById("search-target").value;
   readCookie();
-  var payload = '{"searchString" : "' + searchTarget + '", "unameID : "' + id + '"}';
+  var payload = '{"searchString" : "' + searchTarget + '", "unameID : "' + userID + '"}';
   var url = 'http://plsgiveusana.me/api/Search.php';
   let xhr = new XMLHttpRequest();
   xhr.open("POST",url,true);
