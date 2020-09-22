@@ -90,7 +90,7 @@
             window.location.href = "LandingPage.html";
         }
        
-            //display name
+            console.log(id);//display name
  
     }
 
@@ -178,6 +178,7 @@ function displayContacts(jsonData)
     var num = jsonData["numContacts"];
     var contactsList = jsonData["contacts"];
     var list_length = contactsList.length;
+    console.log(list_length);
     var d2, d1, d3;
     for(var i = 0 ; i < list_length; i++)
     {
