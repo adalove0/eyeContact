@@ -351,7 +351,6 @@ function edit(index)
   var fname = document.getElementById("first-name"+index).innerHTML;
   var lname = document.getElementById("last-name"+index).innerHTML;
   var phone = document.getElementById("phone-edit"+index).innerHTML;
-  var email = document.getElementById("email-edit"+index).innerHTML;
   document.getElementById("edit-button").addEventListener("click", function(){
   var newFname = document.getElementById("editFname").value;
   var newLname = document.getElementById("editLname").value;
