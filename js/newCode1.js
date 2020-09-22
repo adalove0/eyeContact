@@ -353,7 +353,7 @@ function edit(index)
   var phone = document.getElementById("phone-edit"+index).innerHTML;
   var email = document.getElementById("email-edit"+index).innerHTML;
   document.getElementById("edit-button").addEventListener("click", function(){
-  newFname = document.getElementById("editFname").value;
+  var newFname = document.getElementById("editFname").value;
   var newLname = document.getElementById("editLname").value;
   var newPhone = document.getElementById("editEmail").value;
   var newEmail = document.getElementById("editPhone").value;
