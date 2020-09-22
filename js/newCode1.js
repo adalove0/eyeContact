@@ -99,7 +99,6 @@
         }
        
             console.log(userID);//display name
-       alert("hello");
  
     }
 
@@ -116,23 +115,8 @@
         var ContactLastName = document.getElementById("lastName").value;
         var phone = document.getElementById("phone").value;
         var email = document.getElementById("email").value;
-        console.log(ContactFirstName);
-        console.log(ContactLastName);
-        console.log(email);
-        console.log(phone);
-        console.log(userID );
-     alert("hi!!");
         readCookie();
-     alert("hhhi!!");
         var data = '{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
-        console.log('{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}');
-        console.log(data);
-        alert('{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}');
-        alert(userID );
-        alert(ContactFirstName);
-        alert(ContactLastName);
-        alert(email);
-        alert(phone);
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -186,8 +170,6 @@ function read()
                  if(this.readyState == 4 && this.status == 200)
                  {
                      var jsonData = JSON.parse(xhr.responseText);
-                     alert("YES");
-                     console.log(jsonData);
                      displayContacts(jsonData);
                  }
              };
