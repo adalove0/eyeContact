@@ -157,6 +157,8 @@ function read()
                  if(this.readyState == 4 && this.status == 200)
                  {
                      var jsonData = JSON.parse(xhr.responseText);
+                     alert("YES");
+                     console.log(jsonData);
                      displayContacts(jsonData);
                  }
              };
@@ -231,7 +233,6 @@ function displayContacts(jsonData)
         contentDiv1.appendChild(backButton1);
         var contentDiv2 = document.createElement("div");
         contentDiv2.id = "form" + response.contactNumber;
-        console.log(contentDiv2.id);
         contentDiv2.appendChild(image);
         var addForm = document.createElement("form");
         var fnamelabel = document.createElement("label");
@@ -287,15 +288,12 @@ function displayContacts(jsonData)
         doneButton.id = "edit-button";
         contentDiv2.appendChild(backButton);
         contentDiv2.appendChild(doneButton);
-        console.log(contentDiv2.innerHTML);
         contentDiv2.style.display = "none";
         document.getElementById("edit-container").appendChild(contentDiv2);
         document.getElementById("big-container").appendChild(contentDiv1);
-        console.log(contentDiv1.innerHTML);
         editButton.addEventListener("click", function(){
             alert("Hello");
             var editID = "form" + this.id;
-            console.log(editID);
             d2 = document.getElementById("contact"+this.id);
             d3  = document.getElementById(editID);
             if(d3.style.display == "none")
@@ -308,11 +306,8 @@ function displayContacts(jsonData)
 
         cellName.addEventListener("click", function(){
             var cellID = "contact"+this.id;
-            console.log(cellID);
             d1 = document.getElementById("contactView");
             d2 = document.getElementById(cellID);
-            console.log(d1.innerHTML);
-            console.log(d2.innerHTML);
             if(d2.style.display == "none")
             {
                 d1.style.display = "none";
