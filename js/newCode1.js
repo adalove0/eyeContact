@@ -82,24 +82,8 @@
     function readCookie()
     {
         id = -1;
-        var dataArrays = (document.cookie).split(",");
-        var length = dataArrays.length;
-        for(var i = 0; i < length; i++)
-        {
-            var token = (dataArrays[i].trim()).split("=");
-            if( token[0] == "firstName" )
-            {
-                firstName = token[1];
-            }
-            else if( token[0] == "lastName" )
-            {
-                lastName = token[1];
-            }
-            else if( token[0] == "id" )
-            {
-                id = parseInt(token[1].trim());
-            }
-        }
+        var dataArrays = (document.cookie).split("=");
+        id = parseInt(token[0].trim());
 
         if( id < 0 )
         {
