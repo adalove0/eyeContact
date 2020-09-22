@@ -83,7 +83,7 @@
     {
         id = -1;
         var dataArrays = (document.cookie).split("=");
-        id = parseInt(token[0].trim());
+        id = parseInt(dataArrays[0].trim());
 
         if( id < 0 )
         {
