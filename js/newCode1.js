@@ -116,7 +116,11 @@
         var email = document.getElementById("email").value;
         readCookie();
         var data = '{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
-        alert(data);
+        alert(userID );
+        alert(ContactFirstName);
+        alert(ContactLastName);
+        alert(email);
+        alert(phone);
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
