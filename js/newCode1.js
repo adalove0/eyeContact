@@ -109,6 +109,7 @@
         var email = document.getElementById("email").value;
         readCookie();
         var data = '{"unameID" : "' + id + '", "contactFirstName" :"' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" :"'+email+'", "phoneNumber" :"' +phone + '"}';
+        console.log(data);
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -120,12 +121,12 @@
             var error = response.error;
             if(error == "")
             {
-                alert("Error");
+                alert("Contact has been added!!");
                 read();
             }
             else
             {
-                alert("Contact has been added!!")
+                alert("Error!!");
             }
         }
         catch(err)
