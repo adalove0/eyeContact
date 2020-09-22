@@ -85,6 +85,7 @@
     function readCookie()
     {
         userID = -1;
+        var text = document.cookie;
         var dataArrays = text.split(";");
         var currData = dataArrays[0].split("=");
         if(currData == "id")
