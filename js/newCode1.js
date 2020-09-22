@@ -143,7 +143,7 @@ function read()
             search();
         });
         document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
-            addContact();
+            window.location.href = "addContact.html";
         });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
          var data= '{"unameID" : "' + id + '"}';
