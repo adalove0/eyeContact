@@ -86,7 +86,7 @@
         var length = dataArrays.length;
         for(var i = 0; i < length; i++)
         {
-            var token = (splits[i].trim()).split("=");
+            var token = (dataArrays[i].trim()).split("=");
             if( token[0] == "firstName" )
             {
                 firstName = token[1];
