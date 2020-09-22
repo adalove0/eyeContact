@@ -27,8 +27,7 @@
 		{
 			returnWithError( $conn->error );
 		}
-		else 
-			returnWithInfo();
+		returnWithInfo();
 		$conn->close();
 	}	
 	
