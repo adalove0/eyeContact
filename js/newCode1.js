@@ -1,4 +1,5 @@
  var userID = 0;
+ console.log(userID);
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
         var username = document.getElementById("Username").value;
@@ -42,6 +43,7 @@
     function login()
     {
         userID = 0;
+        console.log(userID);
         var url = 'http://plsgiveusana.me/api/Login.php';
         var username = document.getElementById("Login").value;
         var password = MD5(document.getElementById("Password").value);
@@ -54,6 +56,7 @@
             xhr.send(data);
             var response = JSON.parse(xhr.responseText);
             userID = response["unameID"];
+            console.log(userID);
             if( userID == 0)
             {
                 alert("Username/Password combination is wrong");
@@ -82,8 +85,10 @@
     function readCookie()
     {
         userID = -1;
+        console.log(userID);
         var dataArrays = (document.cookie).split("=");
         userID = parseInt(dataArrays[0].trim());
+        console.log(userID);
 
         if( userID < 0 )
         {
