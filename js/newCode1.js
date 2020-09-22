@@ -84,6 +84,7 @@
     }
     function readCookie()
     {
+     
         userID = -1;
         var text = document.cookie;
         var dataArrays = text.split(";");
@@ -98,6 +99,7 @@
         }
        
             console.log(userID);//display name
+       alert("hello");
  
     }
 
@@ -119,7 +121,9 @@
         console.log(email);
         console.log(phone);
         console.log(userID );
+     alert("hi!!);
         readCookie();
+     alert("hhhi!!);
         var data = '{"unameID" : "' + userID + '", "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
         alert(userID );
         alert(ContactFirstName);
