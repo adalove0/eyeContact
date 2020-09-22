@@ -348,9 +348,6 @@ function displayContacts(jsonData)
 
 function edit(index)
 {
-  var fname = document.getElementById("first-name"+index).innerHTML;
-  var lname = document.getElementById("last-name"+index).innerHTML;
-  var phone = document.getElementById("phone-edit"+index).innerHTML;
   document.getElementById("edit-button").addEventListener("click", function(){
   var newFname = document.getElementById("editFname").value;
   var newLname = document.getElementById("editLname").value;
@@ -376,7 +373,9 @@ function edit(index)
         read();
     }
     else
-        alert("FIX!!");
+    {
+     alert("FIX!!");
+    }
     }
     catch(err)
     {
@@ -403,7 +402,7 @@ function deleteContact(index)
       {
         var table = document.getElementById("display-table");
         if(table != null)
-        table.remove();
+         table.remove();
         read();
       }
     };
