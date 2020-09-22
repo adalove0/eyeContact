@@ -136,6 +136,10 @@
         document.getElementById("lastName").value = "";
         document.getElementById("phone").value ="";
         document.getElementById("email").value = "";
+        var table = document.getElementById("display-table");
+        if(table != null)
+        table.remove();
+        window.location.href = "test-page.html";
      }
 function read()
 {
