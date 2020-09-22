@@ -85,9 +85,10 @@
     function readCookie()
     {
         userID = -1;
-        console.log(userID);
-        var dataArrays = (document.cookie).split("=");
-        userID = parseInt(dataArrays[0].trim());
+        var dataArrays = text.split(";");
+        var currData = dataArrays[0].split("=");
+        if(currData == "id")
+            userID = parseInt(currData[0].trim());
         console.log(userID);
 
         if( userID < 0 )
