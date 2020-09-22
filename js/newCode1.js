@@ -177,10 +177,8 @@ function displayContacts(jsonData)
     document.getElementById("displayTable").appendChild(table);
     var num = jsonData["numContacts"];
     var contactsList = jsonData["contacts"];
-    var list_length = contactsList.length;
-    console.log(list_length);
     var d2, d1, d3;
-    for(var i = 0 ; i < list_length; i++)
+    for(var i = 0 ; i < num; i++)
     {
          var response = contactsList[i];
          var row = table.insertRow();
