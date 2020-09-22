@@ -216,7 +216,7 @@ function displayContacts(jsonData)
         var newLine = document.createElement("br");
         contentDiv1.id = "contact" + response.contactNumber;
         var image = document.createElement("img");
-        image.src= "user.jpg";
+        image.src= "images/user.jpg";
         image.id = "user-img";
         contentDiv1.style.display = "none";
         var infotable = document.createElement("table");
