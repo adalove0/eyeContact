@@ -187,9 +187,7 @@ function read()
 function displayContacts(jsonData)
 {
     table = document.createElement("tbody");
-                     //search table body
     table.id = "display-table";
-                     //searchTable
     document.getElementById("displayTable").appendChild(table);
     var num = jsonData["numContacts"];
     var contactsList = jsonData["contacts"];
@@ -423,7 +421,7 @@ function search()
   alert("YES");
   var searchTarget = document.getElementById("search-target").value;
   readCookie();
-  var payload = '{"firstName" : "' + searchTarget + '", "unameID : "' + id + '"}';
+  var payload = '{"searchString" : "' + searchTarget + '", "unameID : "' + id + '"}';
   var url = 'http://plsgiveusana.me/api/Search.php';
   let xhr = new XMLHttpRequest();
   xhr.open("POST",url,true);
