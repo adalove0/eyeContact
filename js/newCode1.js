@@ -350,7 +350,7 @@ function edit(index)
       //$sql = "UPDATE contacts SET contactFirstName='" . $newFirstName . "', contactLastName='" . $newLastName . "',email='"
     //. $newEmail . "', phoneNumber='" . $newPhoneNumber . "' WHERE contactNumber=" . $contactNumber;
   xhr.setRequestHeader("contactFirstName", "application/json; charset=UTF-8");
-  var jsonPayload = '{"newFirstName" : "' + newFname + '",  "newLastName" : "' + newLname + '", "newEmail" : "' + newEmail  + '",  "newPhoneNumber" : "' + newPhone +'", "contactNumber" : "' + index +'"}';
+  var jsonPayload = '{"contactFirstName" : "' + newFname + '",  "contactLastName" : "' + newLname + '", "email" : "' + newEmail  + '",  "phoneNumber" : "' + newPhone +'", "contactNumber" : "' + index +'"}';
   alert(jsonPayload);
   try
   {
