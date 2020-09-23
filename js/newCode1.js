@@ -416,7 +416,7 @@ function searchContact()
 			  if(jsonObject.numResults >= 1)
 				  alert("Found Contacts");
 			  else
-				  alert("NO RECORDS);
+				  alert("NO RECORDS");
 					
 		 } 
 		 else
