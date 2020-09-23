@@ -416,7 +416,7 @@ function searchContact()
 			          
 			  else
 				  alert("NO RECORDS");
-			   alert(jsonObject);
+			   console.log("OBJECT: "+jsonObject);
 					
 		 } 
 		 else
