@@ -123,20 +123,22 @@
         try
         {
             xhr.send(data);
-            var response = JSON.parse(xhr.responseText);
-            var error = response.error;
-            if(error == "")
-            {
-                alert("Contact has been added!!");
-            else
-            {
-                alert("Error!!");
-            }
+            saveCookie();
+            read();
         }
         catch(err)
         {
             alert(err.message);
         }
+        console.log(data);
+        document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
+        document.getElementById("phone").value ="";
+        document.getElementById("email").value = "";
+        var table = document.getElementById("display-table");
+        if(table != null)
+        table.remove();
+        window.location.href = "test-page.html";
      }
 function read()
 {
