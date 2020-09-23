@@ -372,6 +372,7 @@ function deleteContact(index)
 {
   readCookie();
   var jsonPayload = '{"contactNumber" : "' + index +'"}';
+  alert(jsonPayLoad);
   var url = "http://plsgiveusana.me/api/DeleteContacts.php";
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
@@ -385,9 +386,8 @@ function deleteContact(index)
       if(this.readyState == 4 && this.status == 200)
       {
         var table = document.getElementById("display-table");
-        if(table != null)
-         table.remove();
-        read();
+        alert("YEEEES");
+        window.location.href = "test-page.html";
       }
     };
       xhr.send(jsonPayload);
