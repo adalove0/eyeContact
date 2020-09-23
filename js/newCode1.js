@@ -128,8 +128,6 @@
             if(error == "")
             {
                 alert("Contact has been added!!");
-                read();
-            }
             else
             {
                 alert("Error!!");
@@ -139,15 +137,6 @@
         {
             alert(err.message);
         }
-        console.log(data);
-        document.getElementById("firstName").value = "";
-        document.getElementById("lastName").value = "";
-        document.getElementById("phone").value ="";
-        document.getElementById("email").value = "";
-        var table = document.getElementById("display-table");
-        if(table != null)
-        table.remove();
-        window.location.href = "test-page.html";
      }
 function read()
 {
