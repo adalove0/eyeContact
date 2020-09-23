@@ -407,17 +407,27 @@ function searchContact()
   xhr.open("POST",url,true);
   xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
   try
-   {
-            xhr.send(payload);
-	    xhr.onload = function() {
-		    if(xhr.readyState === xhr.DONE){
-			    var jsonObject =  JSON.parse(xhr.responseText);
-	                    alert(jsonObject);
-		    }
-	    }
-    }
-    catch(err)
-    {
-       alert(err.message);
-    }
+  {
+	  xhr.onreadystatechange = function()
+	  {
+		  if(this.readyState == 4 && this.status == 200)
+		  {
+			  var jsonObject = JSON.parse(xhr.responseText);
+			  if(jsonObject.numResults >= 1)
+				  alert("Found Contacts");
+			  else
+				  alert("NO RECORDS);
+					
+		 } 
+		 else
+		{
+			console.log(this.readyState);
+		  }
+	  };
+     catch(err)
+     {
+	     alert(err.message);
+     }
+					
+					
 }
