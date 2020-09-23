@@ -404,6 +404,7 @@ function search()
   var searchTarget = document.getElementById("search-target").value;
   readCookie();
   var payload = '{"searchString" : "' + searchTarget + '", "unameID : "' + userID + '"}';
+  console.log(payload);
   var url = 'http://plsgiveusana.me/api/Search.php';
   let xhr = new XMLHttpRequest();
   xhr.open("POST",url,true);
