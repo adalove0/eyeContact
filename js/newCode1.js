@@ -432,18 +432,3 @@ function search()
     alert(err.message);
   }
 }
-   
-    displayContacts(response);
-    xhr.send(payload);
-    var response = JSON.parse(xhr.responseText);
-    alert("RESPONSE : "+ response);
-    var table = document.getElementById("display-table");
-    if(table != null)
-        table.remove();
-    displayContacts(response);
-  }
-  catch(err)
-  {
-    alert(err.message);
-  }
-}
