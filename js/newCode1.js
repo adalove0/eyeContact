@@ -140,6 +140,9 @@ var userID = 0;
      }
 function read()
 {
+	document.getElementById("search-button").addEventListener("click",function(){
+            searchContact();
+        });
 	document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
             window.location.href = "addContact.html";
         });
@@ -417,6 +420,7 @@ function searchContact()
 			  else
 				  alert("NO RECORDS");
 			   alert("OBJECT: "+JSON.stringify(jsonObject));
+			   window.location.href = "test-page.html";
 					
 		 } 
 		 else
