@@ -409,10 +409,12 @@ function searchContact()
   try
    {
             xhr.send(payload);
-	    var jsonObject = JSON.parse(xhr.responseText);
-	    alert(jsonObject);
-	    alert("HERE");
-            saveCookie();
+	    xhr.onload = function() {
+		    if(xhr.readyState === xhr.DONE){
+			    var jsonObject =  JSON.parse(xhr.responseText);
+	                    alert(jsonObject);
+		    }
+	    }
     }
     catch(err)
     {
