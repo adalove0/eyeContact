@@ -123,7 +123,6 @@
         try
         {
             xhr.send(data);
-            saveCookie();
             var response = JSON.parse(xhr.responseText);
             var error = response.error;
             if(error == "")
