@@ -395,7 +395,7 @@ function deleteContact(index)
   }
 
 }
-function search()
+function searchContact()
 {
   alert("YES");
   var searchTarget = document.getElementById("search-target").value;
