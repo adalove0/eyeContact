@@ -1,4 +1,4 @@
- var userID = 0;
+var userID = 0;
  console.log(userID);
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
