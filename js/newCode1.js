@@ -1,12 +1,6 @@
 
 var userID = 0;
  console.log(userID);
- function signIn()
-{
-	login();
-	windows.location.href = "test-page.html";
-	read();
-}
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
         var username = document.getElementById("Username").value;
@@ -75,6 +69,7 @@ var userID = 0;
                 lastName = response["lastName"];
                 saveCookie();
                 window.location.href = "test-page.html";
+		read();
             }
         }
         catch(err)
