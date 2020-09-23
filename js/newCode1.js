@@ -124,21 +124,20 @@ var userID = 0;
         {
             xhr.send(data);
             saveCookie();
-            read();
+            var table = document.getElementById("display-table");
+            if(table != null)
+                table.remove();
+            window.location.href = "test-page.html";
         }
         catch(err)
         {
             alert(err.message);
         }
-        console.log(data);
+        /*console.log(data);
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = "";
         document.getElementById("phone").value ="";
-        document.getElementById("email").value = "";
-        var table = document.getElementById("display-table");
-        if(table != null)
-        table.remove();
-        window.location.href = "test-page.html";
+        document.getElementById("email").value = "";*/
      }
 function read()
 {
