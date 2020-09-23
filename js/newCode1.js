@@ -1,8 +1,4 @@
-$(document).ready(function() {
-   $("#search-button").click(function() {
-      searchContact();
-   });
-});
+
 
 var userID = 0;
  console.log(userID);
@@ -608,4 +604,5 @@ function displaySearch(jsonData)
            d2.style.display = "none";
             d1.style.display = "block";
         });
+    }
 }
