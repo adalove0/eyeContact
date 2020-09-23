@@ -441,6 +441,6 @@ function searchContact()
 function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
-    oldTable.remove();
+    oldTable.parentNode.removeChild(oldTable);
 
 }
