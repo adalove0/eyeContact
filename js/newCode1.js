@@ -342,7 +342,6 @@ function displayContacts(jsonData)
 
 function edit(index)
 {
-  document.getElementById("edit-button"+index).addEventListener("click", function(){
   var newFname = document.getElementById("editFname"+index).value;
   var newLname = document.getElementById("editLname"+index).value;
   var newPhone = document.getElementById("editEmail"+index).value;
@@ -367,8 +366,6 @@ function edit(index)
     {
       alert(err.message);
     }
-  // this method is done, now we just wait for user click of the confirmEditButton then we run commitEditContact()
-  });
 }
 function deleteContact(index)
 {
