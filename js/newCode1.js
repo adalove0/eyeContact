@@ -404,7 +404,7 @@ function search()
   var searchTarget = document.getElementById("search-target").value;
   readCookie();
   var payload = '{"searchString" : "' + searchTarget + '", "unameID : "' + userID + '"}';
-  console.log(payload);
+  alert("PAYLOAD: "+ payload);
   var url = 'http://plsgiveusana.me/api/Search.php';
   let xhr = new XMLHttpRequest();
   xhr.open("POST",url,true);
@@ -413,7 +413,7 @@ function search()
   {
     xhr.send(payload);
     var response = JSON.parse(xhr.responseText);
-    console.log(response);
+    alert("RESPONSE : "+ response);
     var table = document.getElementById("display-table");
     if(table != null)
         table.remove();
