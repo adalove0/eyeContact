@@ -406,29 +406,16 @@ function search()
   let xhr = new XMLHttpRequest();
   xhr.open("POST",url,true);
   xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-	 try
-	 {
-		   xhr.onreadystatechange = function()
-	  	{
-			    if (this.readyState == 4 && this.status == 200)
-			     {
-				       var jsonObject = JSON.parse(xhr.responseText);
-           if(jsonObject.error == "")
-           { 
-                alert("yes");
-                /*var table = document.getElementById("display-table");
-                if(table != null)
-                  table.remove();
-                 displayContacts(response);*/
-                alert(jsonObject.results);
-           }
-         else
-             alert("NO, records found");
-        }
-     }; xhr.send(payload);
-  }
-  catch(err)
- {
-    alert(err.message);
-  }
+  try
+   {
+            xhr.send(payload);
+	    var jsonObject = JSON.parse(xhr.responseText);
+	    alert(jsonObject);
+	    alert("HERE");
+            saveCookie();
+    }
+    catch(err)
+    {
+       alert(err.message);
+    }
 }
