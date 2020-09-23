@@ -175,15 +175,6 @@ function read()
 
 function displayContacts(jsonData)
 {
-    var elemForm = document.getElementById("form-search");
-    var elemButton = document.createElement("button");
-    elemButton.id = "search-button";
-    elemButton.innerHTML = '<i class="fa fa-search" onclick = "searchContact()"></i>';
-    elemForm.append(elemButton);
-    elemButton.addEventListener("click", function() {
-            searchContact();
-         });
-
     var table = document.createElement("tbody");
     table.id = "display-table";
     console.log(document.getElementById("displayTable").innerHTML);
