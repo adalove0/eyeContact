@@ -371,7 +371,7 @@ function deleteContact(index)
 {
   readCookie();
   var jsonPayload = '{"contactNumber" : "' + index +'"}';
-  alert(jsonPayLoad);
+  alert(jsonPayload);
   var url = "http://plsgiveusana.me/api/DeleteContacts.php";
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
