@@ -414,9 +414,11 @@ function searchContact()
 		  {
 			  var jsonObject = JSON.parse(xhr.responseText);
 			  if(jsonObject.numResults >= 1)
-				  alert("Found Contacts");
+		                  alert("Found Contacts");
+			          
 			  else
 				  alert("NO RECORDS");
+			  window.location.href = "test-page.html";
 					
 		 } 
 		 else
