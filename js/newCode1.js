@@ -420,7 +420,7 @@ function searchContact()
 			          
 			  else
 				  alert("NO RECORDS");
-			   alert(jsonObject);
+			   alert(JSON.stringify(jsonObject));
 					
 		 } 
 		 else
