@@ -69,6 +69,7 @@ var userID = 0;
                 lastName = response["lastName"];
                 saveCookie();
                 window.location.href = "test-page.html";
+		read();
             }
         }
         catch(err)
