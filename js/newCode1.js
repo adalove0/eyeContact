@@ -125,9 +125,6 @@ var userID = 0;
         {
             xhr.send(data);
             saveCookie();
-            var table = document.getElementById("display-table");
-            if(table != null)
-                table.remove();
             window.location.href = "test-page.html";
         }
         catch(err)
