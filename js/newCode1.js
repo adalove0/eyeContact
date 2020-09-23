@@ -140,6 +140,12 @@ var userID = 0;
      }
 function read()
 {
+	 document.getElementById("search-button").addEventListener("click",function(){
+            search();
+        });
+        document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
+            window.location.href = "addContact.html";
+        });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
         readCookie();
         console.log(userID);
@@ -405,35 +411,40 @@ function searchContact()
   alert("YES");
   var searchTarget = document.getElementById("search-target").value;
   readCookie();
-  var jsonPayload = '{"searchString" : "' + searchTarget +'", "unameID" : "' + userID + '"}';
+  var payload = '{"searchString" : "' + searchTarget +'", "unameID" : "' + userID + '"}';
+  alert("PAYLOAD: "+ payload);
   var url = 'http://plsgiveusana.me/api/Search.php';
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true); 
-  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST",url,true);
+  xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
   try
- {
-   xhr.onreadystatechange = function()
   {
-     if (this.readyState == 4 && this.status == 200)
+	  xhr.onreadystatechange = function()
+	  {
+		  if(this.readyState == 4 && this.status == 200)
+		  {
+			  var jsonObject = JSON.parse(xhr.responseText);
+			  if(jsonObject.numResults >= 1)
+		                  alert("Found Contacts");
+			          
+			  else
+				  alert("NO RECORDS");
+			   alert(jsonObject);
+					
+		 } 
+		 else
+		{
+			console.log(this.readyState);
+		  }
+	  };
+	  xhr.send(payload);
+  }
+     catch(err)
      {
-       var jsonObject = JSON.parse(xhr.responseText);
-       if (JSON.stringify(jsonObject.error) === "")
-      {
-         alert("records found");
-
-           return;
-      }
-      else
-	      alert("NO RECORDS");
+	     alert(err.message);
      }
-   };
-	 xhr.send(jsonPayload);
+					
 }
-catch(err)
-{
-alert(err.message);
-}
-} 
 /*function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
