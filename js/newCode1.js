@@ -69,7 +69,6 @@ var userID = 0;
                 lastName = response["lastName"];
                 saveCookie();
                 window.location.href = "test-page.html";
-		read();
             }
         }
         catch(err)
@@ -141,6 +140,12 @@ var userID = 0;
      }
 function read()
 {
+	document.getElementById("search-button").addEventListener("click",function(){
+            window.location.href = "addContact.html";
+        });
+	document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
+            window.location.href = "addContact.html";
+        });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
         readCookie();
         console.log(userID);
@@ -172,6 +177,7 @@ function displayContacts(jsonData)
 {
     var table = document.createElement("tbody");
     table.id = "display-table";
+    var(document.getElementById("displayTable").innerHTML);
     document.getElementById("displayTable").appendChild(table);
     var num = jsonData["numContacts"];
     var contactsList = jsonData["contacts"];
