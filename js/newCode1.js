@@ -198,7 +198,6 @@ function displayContacts(jsonData)
         cellDelete.style.cursor = "pointer";
         cellDelete.innerHTML = '<i style="font-size:24px" class="fa">&#xf014;</i>';
         cellDelete.addEventListener("click", function() {
-            document.getElementById("displayTable").deleteRow(this.id-1);
             deleteContact(this.id);
          });
         var contentDiv1 = document.createElement("div");
