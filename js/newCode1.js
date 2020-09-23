@@ -246,8 +246,8 @@ function displayContacts(jsonData)
         fnamelabel.setAttribute("for","fnamelabel");
         fnamelabel.htmlFor = "text";
         fnamelabel.innerHTML = "First name: ";
-        fnamelabel.id = "editFname"+response.contactNumber;
         var fnameinput = document.createElement("input");
+        fnameinput.id = "editFname"+response.contactNumber;
         fnameinput.value = response.contactFirstName;
         addForm.appendChild(fnamelabel);
         addForm.appendChild(newLine);
@@ -257,9 +257,9 @@ function displayContacts(jsonData)
         lnamelabel.setAttribute("for","lnamelabel");
         lnamelabel.htmlFor = "text";
         lnamelabel.innerHTML = "Last name: ";
-        lnamelabel.id = "editLname"+response.contactNumber;
         var lnameinput = document.createElement("input");
         lnameinput.value = response.contactLastName;
+        lnameinput.id = "editLname"+response.contactNumber;
         addForm.appendChild(lnamelabel);
         addForm.appendChild(newLine.cloneNode());
         addForm.appendChild(lnameinput);
@@ -268,8 +268,8 @@ function displayContacts(jsonData)
         phonelabel.setAttribute("for","phonelabel");
         phonelabel.htmlFor = "text";
         phonelabel.innerHTML = "Phone: ";
-        phonelabel.id = "editPhone"+response.contactNumber;
         var phoneinput = document.createElement("input");
+        phoneinput.id = "editPhone"+response.contactNumber;
         phoneinput.value = response.phoneNumber;
         addForm.appendChild(phonelabel);
         addForm.appendChild(newLine.cloneNode());
@@ -279,8 +279,8 @@ function displayContacts(jsonData)
         emailabel.setAttribute("for","emailabel");
         emailabel.htmlFor = "text";
         emailabel.innerHTML = "Email: ";
-        emailabel.id = "editEmail"+response.contactNumber;
         var emailinput = document.createElement("input");
+        emailinput.id = "editEmail"+response.contactNumber;
         emailinput.value = response.email;
         addForm.appendChild(emailabel);
         addForm.appendChild(newLine.cloneNode());
