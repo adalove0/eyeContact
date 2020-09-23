@@ -421,7 +421,6 @@ function searchContact()
 			  else
 				  alert("NO RECORDS");
 			   alert(jsonObject);
-			   displaySearch(jsonObject);
 					
 		 } 
 		 else
@@ -438,7 +437,7 @@ function searchContact()
 					
 					
 }
-function displaySearch(jsonData)
+/*function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
     oldTable.remove();
@@ -612,4 +611,4 @@ function displaySearch(jsonData)
         var d6  = document.getElementById("search-container");
 	d5.style.display = "none";
         d6.style.display = "block";    
-}
+}*/
