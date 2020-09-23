@@ -149,6 +149,7 @@ function read()
         });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
          var data= '{"unameID" : "' + userID + '"}';
+         console.log(data);
          var xhr = new XMLHttpRequest();
          xhr.open("POST",url,true);
          xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -159,6 +160,7 @@ function read()
                  if(this.readyState == 4 && this.status == 200)
                  {
                      var jsonData = JSON.parse(xhr.responseText);
+                     console.log(jsonData);
                      displayContacts(jsonData);
                  }
              };
