@@ -333,8 +333,7 @@ function displayContacts(jsonData)
                 d2.style.display = "block";
         });
         backButton1.addEventListener("click",function(){
-           d2.style.display = "none";
-            d1.style.display = "block";
+           window.location.href = "test-page.html";
         });
      }
 }
