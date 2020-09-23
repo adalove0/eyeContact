@@ -400,7 +400,7 @@ function search()
   alert("YES");
   var searchTarget = document.getElementById("search-target").value;
   readCookie();
-  var payload = '{"searchString" : "' + searchTarget + '", "unameID : "' + userID + '"}';
+  var payload = '{"searchString" : "' + searchTarget +'", "unameID" : "' + userID + '"}';
   alert("PAYLOAD: "+ payload);
   var url = 'http://plsgiveusana.me/api/Search.php';
   let xhr = new XMLHttpRequest();
