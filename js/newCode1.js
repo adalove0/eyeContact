@@ -424,6 +424,8 @@ function searchContact()
 			console.log(this.readyState);
 		  }
 	  };
+	  xhr.send(payload);
+  }
      catch(err)
      {
 	     alert(err.message);
