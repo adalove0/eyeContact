@@ -2,7 +2,7 @@ $(document).ready(function() {
    $("#search-button").click(function() {
       searchContact();
    });
-});	
+});
 
 var userID = 0;
  console.log(userID);
