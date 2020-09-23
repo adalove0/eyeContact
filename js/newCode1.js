@@ -418,7 +418,7 @@ function searchContact()
 			          
 			  else
 				  alert("NO RECORDS");
-			  window.location.href = "test-page.html";
+			   alert(jsonObject);
 					
 		 } 
 		 else
