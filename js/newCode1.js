@@ -217,6 +217,10 @@ function displayContacts(jsonData)
         var lname = document.createElement("p");
         var emailPhoneP = document.createElement("p");
         var phone = document.createElement("p");
+        fname.id = "show-fname"+response.contactNumber;
+        emailPhoneP.id = "show-email"+response.contactNumber;
+        phone.id = "show-phone"+response.contactNumber;
+        lname.id = "show-lname"+response.contactNumber;
         fname.innerHTML = "First name: "+'&nbsp &nbsp &nbsp &nbsp' + response.contactFirstName;
         fnamerow.appendChild(fname);
         lname.innerHTML = "Last name: "+'&nbsp &nbsp &nbsp &nbsp &nbsp' + response.contactLastName;
@@ -354,18 +358,10 @@ function edit(index)
   try
   {
     xhr.send(jsonPayload);
-    var isError = JSON.parse( xhr.responseText );
-    if(isError.error == "")
-    {
-        var table = document.getElementById("display-table");
-        if(table != null)
-        table.remove();
-        read();
-    }
-    else
-    {
-     alert("FIX!!");
-    }
+    document.getElementById("show-fname").innerHTML = "First name: "+'&nbsp &nbsp &nbsp &nbsp' + newFname;
+    document.getElementById("show-lname").innerHTML = "Last name: "+'&nbsp &nbsp &nbsp &nbsp &nbsp' + newLname;
+    document.getElementById("show-phone").innerHTML = "Phone "+'&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp'+ newPhone;
+    document.getElementById("show-email").innerHTML = "Email: "+'&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp' + newEmail;
     }
     catch(err)
     {
