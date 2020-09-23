@@ -288,7 +288,16 @@ function displayContacts(jsonData)
         backButton.innerHTML = "Button1";
         var doneButton = document.createElement("button");
         doneButton.innerHTML = "DONE";
-        doneButton.id = "edit-button";
+        doneButton.id = response.contactNumber;;
+        doneButton.addEventListener("click", function(){
+         alert("Yes");
+         var editID = "form" + this.id;
+          d2 = document.getElementById("contact"+this.id);
+          d3  = document.getElementById(editID);
+           edit(this.id);
+           d2.style.display = "block";
+           d3.style.display = "none";
+        });
         contentDiv2.appendChild(backButton);
         contentDiv2.appendChild(doneButton);
         contentDiv2.style.display = "none";
@@ -304,7 +313,6 @@ function displayContacts(jsonData)
                 d2.style.display = "none";
                 d3.style.display = "block";
             }
-                edit(this.id);
         });
 
         cellName.addEventListener("click", function(){
@@ -410,6 +418,7 @@ function search()
   {
     xhr.send(payload);
     var response = JSON.parse(xhr.responseText);
+    console.log(response);
     var table = document.getElementById("display-table");
     if(table != null)
         table.remove();
