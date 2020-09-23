@@ -242,7 +242,7 @@ function displayContacts(jsonData)
         fnamelabel.setAttribute("for","fnamelabel");
         fnamelabel.htmlFor = "text";
         fnamelabel.innerHTML = "First name: ";
-        fnamelabel.id = "first-name"+response.contactNumber;
+        fnamelabel.id = "editFname"+response.contactNumber;
         var fnameinput = document.createElement("input");
         fnameinput.value = response.contactFirstName;
         addForm.appendChild(fnamelabel);
@@ -253,7 +253,7 @@ function displayContacts(jsonData)
         lnamelabel.setAttribute("for","lnamelabel");
         lnamelabel.htmlFor = "text";
         lnamelabel.innerHTML = "Last name: ";
-        lnamelabel.id = "last-name"+response.contactNumber;
+        lnamelabel.id = "editLname"+response.contactNumber;
         var lnameinput = document.createElement("input");
         lnameinput.value = response.contactLastName;
         addForm.appendChild(lnamelabel);
@@ -264,7 +264,7 @@ function displayContacts(jsonData)
         phonelabel.setAttribute("for","phonelabel");
         phonelabel.htmlFor = "text";
         phonelabel.innerHTML = "Phone: ";
-        phonelabel.id = "phone-edit"+response.contactNumber;
+        phonelabel.id = "editPhone"+response.contactNumber;
         var phoneinput = document.createElement("input");
         phoneinput.value = response.phoneNumber;
         addForm.appendChild(phonelabel);
@@ -275,7 +275,7 @@ function displayContacts(jsonData)
         emailabel.setAttribute("for","emailabel");
         emailabel.htmlFor = "text";
         emailabel.innerHTML = "Email: ";
-        emailabel.id = "email-edit"+response.contactNumber;
+        emailabel.id = "editEmail"+response.contactNumber;
         var emailinput = document.createElement("input");
         emailinput.value = response.email;
         addForm.appendChild(emailabel);
@@ -338,11 +338,11 @@ function displayContacts(jsonData)
 
 function edit(index)
 {
-  document.getElementById("edit-button").addEventListener("click", function(){
-  var newFname = document.getElementById("editFname").value;
-  var newLname = document.getElementById("editLname").value;
-  var newPhone = document.getElementById("editEmail").value;
-  var newEmail = document.getElementById("editPhone").value;
+  document.getElementById("edit-button"+index).addEventListener("click", function(){
+  var newFname = document.getElementById("editFname"+index).value;
+  var newLname = document.getElementById("editLname"+index).value;
+  var newPhone = document.getElementById("editEmail"+index).value;
+  var newEmail = document.getElementById("editPhone"+index).value;
   readCookie();
   var url = "http://plsgiveusana.me/api/UpdateContact.php";
   var xhr = new XMLHttpRequest();
