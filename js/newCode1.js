@@ -122,16 +122,23 @@ var userID = 0;
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-        try
+         try
         {
-            xhr.send(data);
-            saveCookie();
-            window.location.href = "test-page.html";
+            xhr.onreadystatechange = function() 
+            {
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                    window.location.href = "test-page.html";
+                }
+            };
+            xhr.send( jsonPayload );
         }
         catch(err)
         {
             alert(err.message);
         }
+
+
         /*console.log(data);
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = "";
