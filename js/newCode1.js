@@ -8,7 +8,7 @@ var userID = 0;
         var verifiedPassword = document.getElementById("verify").value;
         if(username == "" || password == "" || verifiedPassword == "")
         {
-            alert("Enter all required fields");
+            doucment.getElementById("create-text").innerHTML = "Enter all required fields";
             return;
         }
         if(password != verifiedPassword)
@@ -49,6 +49,11 @@ var userID = 0;
         var username = document.getElementById("Login").value;
         var password = MD5(document.getElementById("Password").value);
         var data = '{"username" :"'+username+'", "password" :"' +password + '"}';
+	 if(username == "" || password == "")
+         {
+            doucment.getElementById("login-text").innerHTML = "Enter all required fields";
+            return;
+         }
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,false);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
