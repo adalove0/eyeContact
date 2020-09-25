@@ -416,6 +416,7 @@ function searchContact()
   readCookie();
   var payload = '{"searchString" : "' + searchTarget +'", "unameID" : ' + userID + '}';
   alert("PAYLOAD: "+ payload);
+  alert(typeof userID);
   var url = 'http://plsgiveusana.me/api/Search.php';
   let xhr = new XMLHttpRequest();
   xhr.open("POST",url,true);
