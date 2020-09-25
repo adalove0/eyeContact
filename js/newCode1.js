@@ -419,10 +419,10 @@ function searchContact()
   if (xhr.status === 200) {
     console.log(JSON.parse(xhr.responseText));
     var json = JSON.parse(xhr.responseText);
-     if(jsonObject.numResults >= 1)
+     if(json.numResults >= 1)
      {
 	     alert("Found Contacts");
-	     alert(JSON.stringify(jsonObject));
+	     alert(JSON.stringify(json));
      }
      else
 	alert("NOT FOUND");
