@@ -425,7 +425,7 @@ function searchContact()
 	     alert(JSON.stringify(jsonObject));
      }
      else
-	alert("NOT FOUND);
+	alert("NOT FOUND");
   }
 };
   var payload = JSON.stringify({ unameID: userID, searchString: search });
