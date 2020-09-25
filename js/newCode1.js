@@ -156,7 +156,7 @@ function read()
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
         readCookie();
         console.log(userID);
-         var data= '{"unameID" : "' + userID + '"}';
+         var data= '{"unameID" : ' + userID + '}';
          console.log(data);
          var xhr = new XMLHttpRequest();
          xhr.open("POST",url,true);
@@ -358,7 +358,7 @@ function edit(index)
       //$sql = "UPDATE contacts SET contactFirstName='" . $newFirstName . "', contactLastName='" . $newLastName . "',email='"
     //. $newEmail . "', phoneNumber='" . $newPhoneNumber . "' WHERE contactNumber=" . $contactNumber;
   xhr.setRequestHeader("contactFirstName", "application/json; charset=UTF-8");
-  var jsonPayload = '{"contactFirstName" : "' + newFname + '",  "contactLastName" : "' + newLname + '", "email" : "' + newEmail  + '",  "phoneNumber" : "' + newPhone +'", "contactNumber" : "' + index +'"}';
+  var jsonPayload = '{"contactFirstName" : "' + newFname + '",  "contactLastName" : "' + newLname + '", "email" : "' + newEmail  + '",  "phoneNumber" : "' + newPhone +'", "contactNumber" : ' + index +'}';
   alert(jsonPayload);
   try
   {
@@ -376,7 +376,7 @@ function edit(index)
 function deleteContact(index)
 {
   readCookie();
-  var jsonPayload = '{"contactNumber" : "' + index +'"}';
+  var jsonPayload = '{"contactNumber" : ' + index +'}';
   alert(jsonPayload);
   var url = "http://plsgiveusana.me/api/DeleteContacts.php";
   var xhr = new XMLHttpRequest();
