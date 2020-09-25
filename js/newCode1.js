@@ -431,7 +431,6 @@ function searchContact()
   var payload = JSON.stringify({ unameID: userID, searchString: search });
   xhr.send(payload);
 }
-  }
 /*function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
