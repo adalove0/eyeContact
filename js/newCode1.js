@@ -13,11 +13,12 @@ var userID = 0;
         }
         if(password != verifiedPassword)
         {
-            alert("Passwords don't match");
+            doucment.getElementById("create-text").innerHTML =  "Passwords don't match";
             return;
         }
         password = MD5(password);
         var data= '{"username" : "' + username +'", "password" : "' + password + '"}';
+	document.getElementById("create-text").innerHTML = "";
         var xhr = new XMLHttpRequest();
         xhr.open("POST",url,false);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -28,14 +29,13 @@ var userID = 0;
             var error = response["error"];
             if(error == "")
             {
-                alert("User created");
                 document.getElementById("Username").value = "";
                 document.getElementById("Password").value = "";
                 document.getElementById("verify").value = "";
                 window.location.href = "LandingPage.html";
             }
             else
-                alert("Error");
+                document.getElementById("create-text").innerHTML = "Username already exists";
         }
         catch(err){
             alert(err.message);
@@ -51,9 +51,10 @@ var userID = 0;
         var data = '{"username" :"'+username+'", "password" :"' +password + '"}';
 	 if(username == "" || password == "")
          {
-            doucment.getElementById("login-text").innerHTML = "Enter all required fields";
+            document.getElementById("login-text").innerHTML = "Enter all required fields";
             return;
          }
+	 document.getElementById("login-text").innerHTML = "";
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,false);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -65,7 +66,7 @@ var userID = 0;
             console.log(userID);
             if( userID == 0)
             {
-                alert("Username/Password combination is wrong");
+               document.getElementById("login-text").innerHTML = "Username/Password combination is wrong";
                 return;
             }
             else
