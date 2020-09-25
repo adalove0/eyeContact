@@ -411,40 +411,27 @@ function deleteContact(index)
 }
 function searchContact()
 {
-  alert("YES");
-  var searchTarget = document.getElementById("search-target").value;
-  readCookie();
-  var payload = '{"searchString" : "' + searchTarget +'", "unameID" : ' + userID + '}';
-  alert("PAYLOAD: "+ payload);
-  alert(typeof userID);
-  var url = 'http://plsgiveusana.me/api/Search.php';
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST",url,true);
-  xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-  try
-  {
-	  xhr.onreadystatechange = function()
-	  {
-		  if(this.readyState == 4 && this.status == 200)
-		  {
-			  var jsonObject = JSON.parse(xhr.responseText);
-			  if(jsonObject.numResults >= 1)
-		                  alert("Found Contacts");
-			          
-			  else
-				  alert("NO RECORDS");
-			   alert(JSON.stringify(jsonObject));
-					
-		 } 
-	  };
-	  xhr.send(payload);
-  }
-     catch(err)
+  var searchUrl = "http://plsgiveusana.me/api/Search.php";
+  var xhr = new XMLHttpRequest();
+  xhr.open("post", searchUrl, true);
+  var search = document.getElementById("search-target").value;
+  xhr.onload = () => {
+  if (xhr.status === 200) {
+    console.log(JSON.parse(xhr.responseText));
+    var json = JSON.parse(xhr.responseText);
+     if(jsonObject.numResults >= 1)
      {
-	     alert(err.message);
+	     alert("Found Contacts");
+	     alert(JSON.stringify(jsonObject));
      }
-					
+     else
+	alert("NOT FOUND);
+  }
+};
+  var payload = JSON.stringify({ unameID: userID, searchString: search });
+  xhr.send(payload);
 }
+  }
 /*function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
