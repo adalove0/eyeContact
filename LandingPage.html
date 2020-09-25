@@ -1,27 +1,30 @@
 <!DOCTYPE html>
+<html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel = "stylesheet" href = "css/styleSheet.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <script type="text/javascript" src="js/md5.js">Hashing the password</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/newCode1.js"></script>
+    <link rel = "stylesheet" href = "css/styleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Ubuntu:wght@300;400;500&display=swap" rel="styleSheet">
   </head>
   <body>
-      <div class = "loginAndPassword">
-        <h1 class="titleText"> Login to eyeContacts! </h1>
-        <img class="image" alt = "Group2 Logo" src = "images/Group2_Logo.png"></img><br><br>
-      <form>
-        <label for="Login">Login:</label><br>
-        <input class="form" type="text" placeholder="Joe123" id="Login" name="Login" value: "me12345"><br>
-        <label for="Password">Password: </label><br>
-        <input class="form"type="password" id="Password" name="Password" value: "password12345">
-      </form>
-      <button class = "button" type="button" id="createUserButton" onclick="document.location='createUser.html'">New User</button>
-      <button class = "button" type="button" id="loginButton" onclick = "login();">Submit</button>
-      </div>
-  </body>
+  	<div class="container-box">
+    <form>
+    	<img src="user.png" width = "130px" height = "130px">
+    	<div class="input-container">
+    		<i class = "fa fa-user icon"></i>
+    		<input class="text-field" type="text" placeholder="username" id="Login" name="Login"><br>
+    	</div>
+    	 <div class="input-container">
+    		<i class = "fa fa-lock icon"></i>
+    		<input class="text-field" type="text" placeholder="password" id="Password" name="Password">
+    	</div>
+        <button class = "button " type="button" id="loginButton" onclick = "login();">Login</button>
+        <p>Don't have an account? <a href = "createUser.html">Sign up</a></p>
+    </form>
+</div>
+</body>
 </html>
