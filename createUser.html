@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel = "stylesheet" href = "css/styleSheet.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create User</title>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/md5.js">Hashing the password</script>
-    <script type="text/javascript" src="js/newCode1.js">LINK TO JS CODE</script>
+    <link rel = "stylesheet" href = "css/styleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Ubuntu:wght@300;400;500&display=swap" rel="styleSheet">
+    <link rel = "stylesheet" href = "style2.css">
   </head>
   <body>
-      <div class = "loginAndPassword">
-        <h1 class="titleText"> Create your account! </h1>
-        <img class="image" alt = "Group Logo" src = "images/Group2_Logo.png"></img><br><br>
+      <div class = "container-box">
       <form>
-        <label for="Username">Enter Username</label><br>
-        <input class="form" type="text" placeholder="Joe123" id="Username" name="Username"><br>
-        <label for="Password">Enter Password</label><br>
-        <input class="form" type="password" id="Password" name="Enter Username"><br>
-        <label for="Email">Verify Password</label><br>
-        <input class="form" type="password" id="verify" name="Verify Password">
-      </form>
-      <button class="button" type="button" id="goToLandingPage" onclick="document.location = 'LandingPage.html'">Existing User</button>
-      <button class = "button" type="button" id="createUserButton" onclick ="create();">Submit</button>
-      </div>
+          <img src="user.png" width = "130px" height = "130px">
+          <div class="input-container">
+           <i class = "fa fa-user icon"></i>
+             <input class="text-field" type="text" placeholder="Enter username" id="Username" name="Username"><br>
+           </div>
+          <div class="input-container">
+           <i class = "fa fa-user lock icon"></i>
+             <input class="text-field" type="password" placeholder="Enter password" id="Password" name="Password"><br>
+           </div>
+          <div class="input-container">
+           <i class = "fa fa-user lock icon"></i>
+             <input class="text-field" type="password" placeholder="Confirm Password" id="verify" name="verify"><br>
+           </div>
+          <button class = "button " type="button" id="loginButton" onclick = "create();">Sign up</button>
+          <p>Already have an account? <a href = 'LandingPage.html'>Sign in</a></p>
+        </form>
   </body>
 </html>
