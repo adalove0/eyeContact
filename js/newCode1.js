@@ -155,8 +155,7 @@ var valueToSrch = "";
 function read()
 {
 	
-        document.getElementById("search-button").addEventListener("click",function(){
-	{               
+        document.getElementById("search-button").addEventListener("click",function(){              
 		        valueToSrch = document.getElementById("search-target").value;
 			window.location.href = "newPage.html";
 	});
