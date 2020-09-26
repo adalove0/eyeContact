@@ -162,6 +162,7 @@ img
   margin-top : 15px;
   margin-bottom : 13px;
   border-radius : 12px;
+  font-family: 'Fjalla One', sans-serif;
 }
 .button:focus {
     outline:none;
