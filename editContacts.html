@@ -9,18 +9,26 @@
 </head>
 
 <body>
-  <div class = "viewTable">
+  <div class = "container-box">
     <h1 class="titleText"> Edit your Information! </h1>
-    <img class="image" alt="Group2_Logo" src="images/Group2_Logo.png"</img>
     <form>
-      <label for="Username">Edit Username:</label><br>
-      <input class="form" type="text" placeholder="Joe123" id="Username" name="Username"><br>
-      <label for="Username">Edit Phone Number:</label><br>
-      <input class="form" type="text" placeholder="Joe123" id="phoneNumber" name="Phone Number"><br>
-      <label for="Password">Enter Password:</label><br>
-      <input class="form" type="password" id="Password" name="Enter Password"><br>
-      <label for="Email">Verify Password:</label><br>
-      <input class="form" type="password" id="verify" name="Verify Password">
+      <img class="image" alt="Group2_Logo" src="images/Group2_Logo.png"width = "200px" height = "200px" >
+      <div class="input-container">
+    		<i class = "fa fa-user icon"></i>
+    		<input class="text-field" type="text" placeholder="username" id="Login" name="Login"><br>
+    	</div>
+    	 <div class="input-container">
+    		<i class = "fa fa-lock icon"></i>
+    		<input class="text-field" type="password" placeholder="password" id="Password" name="Password">
+    	</div>
+      <div class="input-container">
+       <i class = "fa fa-lock icon"></i>
+       <input class="text-field" type="password" placeholder="Verify Password" id="Password" name="Password">
+     </div>
+     <div class="input-container">
+      <i class = "fa fa-lock icon"></i>
+      <input class="text-field" type="password" placeholder="Verify Password" id="Password" name="Password">
+    </div>
     </form>
     <button class = "button" type="button" id="editUserButton" onclick ="update;">Submit</button>
   </div>
