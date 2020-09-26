@@ -156,8 +156,7 @@ function read()
 {
 	
         document.getElementById("search-button").addEventListener("click",function(){              
-		        valueToSrch = document.getElementById("search-target").value;
-			window.location.href = "newPage.html";
+		searchContact();
 	});
         document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
             window.location.href = "addContact.html";
@@ -415,6 +414,7 @@ function deleteContact(index)
 function searchContact()
 {
   var searchUrl = "http://plsgiveusana.me/api/Search.php";
+  var searchVal = document.getElementById("search-target").innerHTML;
   var xhr = new XMLHttpRequest();
   xhr.open("post", searchUrl, true);
   xhr.onload = () => {
@@ -426,13 +426,12 @@ function searchContact()
 	     alert("Found Contacts");
 	     var searchResult = JSON.stringify(json); 
 	     alert(searchResult);
-	     document.getElementById("searchResult").innerHTML = searchResult;
      }
      else
 	alert("NOT FOUND");
   }
 };
-  var payload = JSON.stringify({ unameID: userID, searchString: valueToSrch});
+  var payload = JSON.stringify({ unameID: userID, searchString: searchVal});
   xhr.send(payload);
 }
 	
