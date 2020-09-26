@@ -1,5 +1,6 @@
 
 var userID = 0;
+var searchResult = {};
  console.log(userID);
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
@@ -153,10 +154,7 @@ var userID = 0;
      }
 function read()
 {
-	 document.getElementById("search-button").addEventListener("click",function(){
-            searchContact();
-	    return;
-        });
+
         document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
             window.location.href = "addContact.html";
         });
@@ -423,15 +421,22 @@ function searchContact()
      if(json.numResults >= 1)
      {
 	     alert("Found Contacts");
-	     alert(JSON.stringify(json));
+	     var searchResult = JSON.stringify(json); 
+	     alert(searchResult);
      }
      else
 	alert("NOT FOUND");
   }
+	  window.location.href = "newPage.html";
 };
   var payload = JSON.stringify({ unameID: userID, searchString: search });
   xhr.send(payload);
 }
+function showResults()
+{
+   document.getElementById("searchResult").innerHTML = searchResult;
+}
+	
 /*function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
