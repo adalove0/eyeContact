@@ -414,7 +414,7 @@ function deleteContact(index)
 function searchContact()
 {
   var searchUrl = "http://plsgiveusana.me/api/Search.php";
-  var searchVal = document.getElementById("search-target").innerHTML;
+  var searchVal = document.getElementById("search-target").value;
   var xhr = new XMLHttpRequest();
   xhr.open("post", searchUrl, true);
   xhr.onload = () => {
