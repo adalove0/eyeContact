@@ -1,6 +1,6 @@
 
 var userID = 0;
-var searchResult = {};
+var valueToSrch = "";
  console.log(userID);
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
@@ -154,7 +154,12 @@ var searchResult = {};
      }
 function read()
 {
-
+	
+        document.getElementById("search-button").addEventListener("click",function(){
+	{               
+		        valueToSrch = document.getElementById("search-target").value;
+			window.location.href = "newPage.html";
+	});
         document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
             window.location.href = "addContact.html";
         });
@@ -413,7 +418,6 @@ function searchContact()
   var searchUrl = "http://plsgiveusana.me/api/Search.php";
   var xhr = new XMLHttpRequest();
   xhr.open("post", searchUrl, true);
-  var search = document.getElementById("search-target").value;
   xhr.onload = () => {
   if (xhr.status === 200) {
     console.log(JSON.parse(xhr.responseText));
@@ -423,18 +427,14 @@ function searchContact()
 	     alert("Found Contacts");
 	     var searchResult = JSON.stringify(json); 
 	     alert(searchResult);
+	     document.getElementById("searchResult").innerHTML = searchResult;
      }
      else
 	alert("NOT FOUND");
   }
-	  window.location.href = "newPage.html";
 };
-  var payload = JSON.stringify({ unameID: userID, searchString: search });
+  var payload = JSON.stringify({ unameID: userID, searchString: valueToSrch});
   xhr.send(payload);
-}
-function showResults()
-{
-   document.getElementById("searchResult").innerHTML = searchResult;
 }
 	
 /*function displaySearch(jsonData)
