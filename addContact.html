@@ -6,22 +6,39 @@
   <<title>Edit Current Information</title>
   <script type="text/javascript" src="js/newCode1.js">LINK TO JS CODE</script>
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Ubuntu:wght@300;400;500&display=swap" rel="styleSheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div class = "viewTable">
-    <h1 class="titleText"> Edit your Information! </h1>
-    <img class="image" alt="Group2_Logo" src="images/Group2_Logo.png"</img>
+  <div class = "container-box">
+    <h1 class="title-text">Add a Contact!</h1>
+
     <form>
-      <label for="Username">Enter first name: </label><br>
-      <input class="form" type="text" placeholder="Joe123" id="firstName" name="Username"><br>
-      <label for="Username">Enter last name:</label><br>
-      <input class="form" type="text" placeholder="Joe123" id="lastName" name="Phone Number"><br>
-      <label for="Password">Enter phone:</label><br>
-      <input class="form" type="text" id="phone" name="Enter Phone"><br>
-      <label for="Email">Enter email:</label><br>
-      <input class="form" type="text" id="email" name="Enter Password">
+    <img src='images/Group2_Logo.png' width = "200px" height = "200px">
+
+    <div class="input-container">
+      <i class = "fa fa-user icon"></i>
+      <input class="text-field" type="text" placeholder="First Name" id="FirstName" name="FirstName"><br>
+    </div>
+
+     <div class="input-container">
+      <i class = "fa fa-user icon"></i>
+      <input class="text-field" type="text" placeholder="Last Name" id="LastName" name="LastName"><br>
+    </div>
+
+    <div class="input-container">
+     <i class="fa fa-phone"></i>
+     <input class="text-field" type="text" placeholder="Phone Number" id="PhoneNumber" name="Password"><br>
+    </div>
+
+    <div class="input-container">
+     <i class="fa fa-envelope"></i>
+     <input class="text-field" type="text" placeholder="Email" id="Email" name="Password"><br>
+   </div>
+
+    <button class = "button " type="button" id="backButton" onclick = >Back</button>
+    <button class = "button " type="button" id="loginButton" onclick = "addContacts()">Add Contact</button>
     </form>
-    <button class = "button" type="button" id="editUserButton" onclick ="addContact()">Submit</button>
   </div>
 </body>
