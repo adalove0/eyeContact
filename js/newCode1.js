@@ -423,9 +423,10 @@ function searchContact()
     var json = JSON.parse(xhr.responseText);
      if(json.numResults >= 1)
      {
-	     alert("Found Contacts");
+	     //alert("Found Contacts");
 	     var searchResult = JSON.stringify(json); 
-	     alert(searchResult);
+	     displaySearch(searchResult);
+	     //alert(searchResult);
      }
      else
 	alert("NOT FOUND");
@@ -435,7 +436,7 @@ function searchContact()
   xhr.send(payload);
 }
 	
-/*function displaySearch(jsonData)
+function displaySearch(jsonData)
 {
     var oldTable = document.getElementById("display-table");
     oldTable.remove();
@@ -609,4 +610,4 @@ function searchContact()
         var d6  = document.getElementById("search-container");
 	d5.style.display = "none";
         d6.style.display = "block";    
-}*/
+}
