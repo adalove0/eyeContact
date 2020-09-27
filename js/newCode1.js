@@ -223,27 +223,27 @@ function displayContacts(jsonData)
         image.id = "user-img";
         contentDiv1.style.display = "none";
         var infotable = document.createElement("table");
+	infotable.id = "contact-view";
         var fnamerow = infotable.insertRow();
+        var fnameTitle = fnamerow.insertCell();
+        fnameTitle.innerHTML = "First name: ";
+        var fnameContent = fnamerow.insertCell();
+        fnameContent.innerHTML = response.contactFirstName;
         var lnamerow = infotable.insertRow();
+        var lnameTitle = lnamerow.insertCell();
+        lnameTitle.innerHTML = "Last name: ";
+        var lnameContent = lnamerow.insertCell();
+        lnameContent.innerHTML = response.contactLastName;
         var emailrow = infotable.insertRow();
+        var emailTitle = emailrow.insertCell();
+        emailTitle.innerHTML = "First name: ";
+        var emailContent = emailrow.insertCell();
+        emailContent.innerHTML = response.email;
         var phonerow = infotable.insertRow();
-        var fname = document.createElement("p");
-        var lname = document.createElement("p");
-        var emailPhoneP = document.createElement("p");
-        var phone = document.createElement("p");
-        fname.id = "show-fname"+response.contactNumber;
-        emailPhoneP.id = "show-email"+response.contactNumber;
-        phone.id = "show-phone"+response.contactNumber;
-        lname.id = "show-lname"+response.contactNumber;
-        fname.innerHTML = "First name: "+'&nbsp &nbsp &nbsp &nbsp' + response.contactFirstName;
-        fnamerow.appendChild(fname);
-        lname.innerHTML = "Last name: "+'&nbsp &nbsp &nbsp &nbsp &nbsp' + response.contactLastName;
-        lnamerow.appendChild(lname);
-        emailPhoneP.innerHTML = "Email: "+'&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp' + response.email;
-        emailrow.appendChild(emailPhoneP);
-        phone.innerHTML = "Phone "+'&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp' + response.phoneNumber;
-        phonerow.appendChild(phone);
-        contentDiv1.appendChild(image);
+        var phoneTitle = phonerow.insertCell();
+        phoneTitle.innerHTML = "First name: ";
+        var phoneContent = phonerow.insertCell();
+        phoneContent.innerHTML = response.phoneNumber;
         contentDiv1.appendChild(infotable);
         var editButton = document.createElement("button");
         editButton.innerHTML = '<i class="material-icons" style="font-size:36px">mode_edit</i>';
@@ -423,10 +423,10 @@ function searchContact()
     var json = JSON.parse(xhr.responseText);
      if(json.numResults >= 1)
      {
-	     //alert("Found Contacts");
+	     alert("Found Contacts");
 	     var searchResult = JSON.stringify(json); 
 	     displaySearch(searchResult);
-	     //alert(searchResult);
+	     alert(searchResult);
      }
      else
 	alert("NOT FOUND");
@@ -436,7 +436,7 @@ function searchContact()
   xhr.send(payload);
 }
 	
-function displaySearch(jsonData)
+/*function displaySearch(jsonData)
 {
     document.getElementById("contactView").style.display = "none";
     var table = document.createElement("tbody");
@@ -603,5 +603,5 @@ function displaySearch(jsonData)
             d1.style.display = "block";
         });
     } 
-}
+}*/
 
