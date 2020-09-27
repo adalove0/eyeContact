@@ -438,11 +438,10 @@ function searchContact()
 	
 function displaySearch(jsonData)
 {
-    var oldTable = document.getElementById("display-table");
-    oldTable.remove();
+    document.getElementById("contactView").style.display = "none";
     var table = document.createElement("tbody");
-    table.id = "display-table";
-    document.getElementById("display-search-table").appendChild(table);
+    table.id = "search-table";
+    document.getElementById("search-table").appendChild(table);
     var buttonBack = document.createElement("button");
     buttonBack.innerHTML = "BACK";
     buttonBack.addEventListener("click", function() {
@@ -455,7 +454,6 @@ function displaySearch(jsonData)
     {
          var response = contactsList[i];
          var row = table.insertRow();
-         var contactnumero = i;
          var cellName = row.insertCell();
          cellName.classList.add("accordion");
          cellName.style.cursor = "pointer";
@@ -472,9 +470,6 @@ function displaySearch(jsonData)
         var contentDiv1 = document.createElement("div");
         var newLine = document.createElement("br");
         contentDiv1.id = "contact" + response.contactNumber;
-        var image = document.createElement("img");
-        image.src= "images/user.jpg";
-        image.id = "user-img";
         contentDiv1.style.display = "none";
         var infotable = document.createElement("table");
         var fnamerow = infotable.insertRow();
@@ -564,6 +559,7 @@ function displaySearch(jsonData)
         doneButton.addEventListener("click", function(){
          alert("Yes");
          var editID = "form" + this.id;
+	  d1 = document.getElementById("search-table");
           d2 = document.getElementById("contact"+this.id);
           d3  = document.getElementById(editID);
            edit(this.id);
@@ -573,8 +569,8 @@ function displaySearch(jsonData)
         contentDiv2.appendChild(backButton);
         contentDiv2.appendChild(doneButton);
         contentDiv2.style.display = "none";
-        document.getElementById("edit-container").appendChild(contentDiv2);
-        document.getElementById("big-container").appendChild(contentDiv1);
+        document.getElementById("edit-container1").appendChild(contentDiv2);
+        document.getElementById("big-container1").appendChild(contentDiv1);
         editButton.addEventListener("click", function(){
             alert("Hello");
             var editID = "form" + this.id;
@@ -586,8 +582,7 @@ function displaySearch(jsonData)
                 d3.style.display = "block";
             }
         });
-
-        cellName.addEventListener("click", function(){
+	   cellName.addEventListener("click", function(){
             var cellID = "contact"+this.id;
             d1 = document.getElementById("contactView");
             d2 = document.getElementById(cellID);
@@ -597,6 +592,8 @@ function displaySearch(jsonData)
                 d2.style.display = "block";
              }
         });
+
+
         backButton.addEventListener("click",function(){
                 d3.style.display = "none";
                 d2.style.display = "block";
@@ -605,9 +602,6 @@ function displaySearch(jsonData)
            d2.style.display = "none";
             d1.style.display = "block";
         });
-    }
-	var d5 = document.getElementById("table1");
-        var d6  = document.getElementById("search-container");
-	d5.style.display = "none";
-        d6.style.display = "block";    
+    } 
 }
+
