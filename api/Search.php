@@ -25,8 +25,10 @@
 				{
 					$searchResults .= ",{";
 				}
-				$searchResults .= '"contactNumber":"' . $row["contactNumber"] . '","contactFirstName":"' . 
-				$row["contactFirstName"] . '","contactLastName":"' . $row["contactLastName"] . '"}';
+				$contactResults .= '"contactNumber":"' . $row["contactNumber"] .'","contactFirstName":"' .
+				$row["contactFirstName"] .'","contactLastName":"' . $row["contactLastName"] . '","email":"' .
+				$row["email"] .'","phoneNumber":"' . $row["phoneNumber"] . '","dateCreated":"' . $row["dateCreated"]
+				. '"}';
 				$numResults++;
 			}
 			$searchResults .= '],';
@@ -51,7 +53,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"results":"[{}]","numContacts":0,"error":"' . $err . '"}';
+		$retValue = '{"results":[{}],"numContacts":0,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
