@@ -339,6 +339,7 @@ function displayContacts(jsonData)
             d2 = document.getElementById(cellID);
             if(d2.style.display == "none")
             {
+		document.getElementById("big-container").style.display = "block";
                 d1.style.display = "none";
                 d2.style.display = "block";
              }
