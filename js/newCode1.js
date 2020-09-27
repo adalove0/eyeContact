@@ -425,7 +425,7 @@ function searchContact()
      {
 	     alert("Found Contacts");
 	     var searchResult = JSON.stringify(json); 
-	     displaySearch(searchResult);
+	     //displaySearch(searchResult);
 	     alert(searchResult);
      }
      else
