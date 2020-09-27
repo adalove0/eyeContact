@@ -441,7 +441,7 @@ function displaySearch(jsonData)
     document.getElementById("contactView").style.display = "none";
     var table = document.createElement("tbody");
     table.id = "search-table";
-    document.getElementById("search-table").appendChild(table);
+    document.getElementById("searchTable").appendChild(table);
     var buttonBack = document.createElement("button");
     buttonBack.innerHTML = "BACK";
     buttonBack.addEventListener("click", function() {
