@@ -301,7 +301,7 @@ function displayContacts(jsonData)
         addForm.appendChild(emailinput);
         addForm.appendChild(newLine.cloneNode());
         contentDiv2.appendChild(addForm);
-        contentDiv1.classList.add("new-form");
+        contentDiv1.classList.add("contact-form");
         var backButton = document.createElement("button");
         backButton.innerHTML = "Button1";
         var doneButton = document.createElement("button");
