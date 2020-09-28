@@ -248,9 +248,11 @@ function displayContacts(jsonData)
         var editButton = document.createElement("button");
         editButton.innerHTML = '<i class="material-icons" style="font-size:36px">mode_edit</i>';
         editButton.id = response.contactNumber;
+	editButton.classList.add("edit-button");
         contentDiv1.appendChild(editButton);
         var backButton1 = document.createElement("button");
         backButton1.innerHTML = "Button2";
+	backButton1.id = "back-btn1";
         contentDiv1.appendChild(backButton1);
         var contentDiv2 = document.createElement("div");
         contentDiv2.id = "form" + response.contactNumber;
