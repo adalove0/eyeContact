@@ -125,7 +125,6 @@ var valueToSrch = "";
         var email = document.getElementById("email").value;
         readCookie();
         var jsonPayload = '{"unameID" : ' + userID + ', "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
-        t(jsonPayload);
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
