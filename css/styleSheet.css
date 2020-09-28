@@ -2,10 +2,7 @@
 {
   width: 100%;
 }
-.view-table
-{
-   display: inline-block;
-}
+
 
 #contactView
 {
@@ -33,6 +30,7 @@
 .view-table
 {
   width: 80%;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 
