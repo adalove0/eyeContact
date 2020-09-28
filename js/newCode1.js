@@ -236,12 +236,12 @@ function displayContacts(jsonData)
         lnameContent.innerHTML = response.contactLastName;
         var emailrow = infotable.insertRow();
         var emailTitle = emailrow.insertCell();
-        emailTitle.innerHTML = "First name: ";
+        emailTitle.innerHTML = "Phone number: ";
         var emailContent = emailrow.insertCell();
         emailContent.innerHTML = response.email;
         var phonerow = infotable.insertRow();
         var phoneTitle = phonerow.insertCell();
-        phoneTitle.innerHTML = "First name: ";
+        phoneTitle.innerHTML = "Email: ";
         var phoneContent = phonerow.insertCell();
         phoneContent.innerHTML = response.phoneNumber;
         contentDiv1.appendChild(infotable);
