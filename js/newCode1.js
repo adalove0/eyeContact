@@ -299,13 +299,22 @@ function displayContacts(jsonData)
         addForm.appendChild(newLine.cloneNode());
         addForm.appendChild(emailinput);
         addForm.appendChild(newLine.cloneNode());
+	var EditTitle = document.createElement("h1");
+	EditTitle.innerHTML = "Edit Contact";
+	EditTitle.classList.add("title-text");
+	var EditImage = document.createElement("img");
+	EditImage.setAttribute("src","images/Group2_Logo.png");
+	EditImage.id = "logo-image";
+	contentDiv2.appendChild(EditTitle);
+	contentDive2.appendChid(EditImage);
         contentDiv2.appendChild(addForm);
+	contentDiv2.classList.add = "container-box";
         contentDiv1.classList.add("contact-form");
         var backButton = document.createElement("button");
         backButton.innerHTML = "Back";
         var doneButton = document.createElement("button");
         doneButton.innerHTML = "Edit";
-        doneButton.id = response.contactNumber;;
+        doneButton.id = response.contactNumber;
         doneButton.addEventListener("click", function(){
          alert("Yes");
          var editID = "form" + this.id;
