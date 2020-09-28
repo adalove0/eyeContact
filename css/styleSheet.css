@@ -28,7 +28,9 @@
 
 #big-container tr
 {
+  font-family: 'Fjalla One', sans-serif;
   line-height: 75px;
+  border-bottom-width: thin;
 }
 
 .view-table
