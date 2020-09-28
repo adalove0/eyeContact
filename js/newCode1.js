@@ -254,7 +254,6 @@ function displayContacts(jsonData)
         contentDiv1.appendChild(backButton1);
         var contentDiv2 = document.createElement("div");
         contentDiv2.id = "form" + response.contactNumber;
-        contentDiv2.appendChild(image);
         var addForm = document.createElement("form");
         var fnamelabel = document.createElement("label");
         fnamelabel.setAttribute("for","fnamelabel");
