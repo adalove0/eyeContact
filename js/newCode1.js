@@ -233,12 +233,12 @@ function displayContacts(jsonData)
         lnameContent.innerHTML = response.contactLastName;
         var emailrow = infotable.insertRow();
         var emailTitle = emailrow.insertCell();
-        emailTitle.innerHTML = "Phone number: ";
+        emailTitle.innerHTML = "Email: ";
         var emailContent = emailrow.insertCell();
         emailContent.innerHTML = response.email;
         var phonerow = infotable.insertRow();
         var phoneTitle = phonerow.insertCell();
-        phoneTitle.innerHTML = "Email: ";
+        phoneTitle.innerHTML = "Phone Number: ";
         var phoneContent = phonerow.insertCell();
         phoneContent.innerHTML = response.phoneNumber;
         contentDiv1.appendChild(infotable);
@@ -448,6 +448,7 @@ function displaySearch(jsonData)
 {
     document.getElementById("container").style.display = "none";
     document.getElementById("searchView").style.display = "block";
+    document.getElementById("back-search").style.display = "block";
     var table = document.createElement("tbody");
     table.id = "search-table";
     document.getElementById("searchTable").appendChild(table);
