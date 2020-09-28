@@ -451,8 +451,8 @@ function displaySearch(jsonData)
     buttonBack.addEventListener("click", function() {
       window.location.href = "viewContacts.html";
     });
-    var num = jsonData["numContacts"];
-    var contactsList = jsonData["contacts"];
+    var num = jsonData["numResults"];
+    var contactsList = jsonData["results"];
     var d2, d1, d3;
     for(var i = 0 ; i < num; i++)
     {
