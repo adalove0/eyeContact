@@ -75,7 +75,7 @@ var valueToSrch = "";
                 firstName = response["firstName"];
                 lastName = response["lastName"];
                 saveCookie();
-                window.location.href = "test-page.html";
+                window.location.href = "viewContacts.html";
             }
         }
         catch(err)
@@ -135,7 +135,7 @@ var valueToSrch = "";
             {
                 if (this.readyState == 4 && this.status == 200) 
                 {
-                    window.location.href = "test-page.html";
+                    window.location.href = "viewContacts.html";
                 }
             };
             xhr.send( jsonPayload );
@@ -349,7 +349,7 @@ function displayContacts(jsonData)
                 d2.style.display = "block";
         });
         backButton1.addEventListener("click",function(){
-           window.location.href = "test-page.html";
+           window.location.href = "viewContacts.html";
         });
      }
 }
@@ -401,7 +401,7 @@ function deleteContact(index)
       {
         var table = document.getElementById("display-table");
         alert("YEEEES");
-        window.location.href = "test-page.html";
+        window.location.href = "viewContacts.html";
       }
     };
       xhr.send(jsonPayload);
@@ -446,7 +446,7 @@ function searchContact()
     var buttonBack = document.createElement("button");
     buttonBack.innerHTML = "BACK";
     buttonBack.addEventListener("click", function() {
-      window.location.href = "test-page.html";
+      window.location.href = "viewContacts.html";
     });
     var num = jsonData["numContacts"];
     var contactsList = jsonData["contacts"];
