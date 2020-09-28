@@ -447,6 +447,7 @@ function searchContact()
 function displaySearch(jsonData)
 {
     document.getElementById("container").style.display = "none";
+    document.getElementById("search-container").style.display = "block";
     var table = document.createElement("tbody");
     table.id = "search-table";
     document.getElementById("searchTable").appendChild(table);
