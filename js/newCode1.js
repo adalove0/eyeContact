@@ -306,7 +306,7 @@ function displayContacts(jsonData)
 	EditImage.setAttribute("src","images/Group2_Logo.png");
 	EditImage.id = "logo-image";
 	contentDiv2.appendChild(EditTitle);
-	contentDiv2.appendChid(EditImage);
+	contentDiv2.appendChild(EditImage);
         contentDiv2.appendChild(addForm);
 	contentDiv2.classList.add = "container-box";
         contentDiv1.classList.add("contact-form");
