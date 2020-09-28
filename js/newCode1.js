@@ -250,6 +250,7 @@ function displayContacts(jsonData)
         editButton.id = response.contactNumber;
 	editButton.classList.add("edit-button");
         contentDiv1.appendChild(editButton);
+	contentDiv1.classList.add("view-table");
         var backButton1 = document.createElement("button");
         backButton1.innerHTML = "Button2";
 	backButton1.id = "back-btn1";
