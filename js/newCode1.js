@@ -39,7 +39,7 @@ var valueToSrch = "";
                 document.getElementById("create-text").innerHTML = "Username already exists";
         }
         catch(err){
-            alert(err.message);
+            console.log(err.message);
         }
     }
     function login()
@@ -80,7 +80,7 @@ var valueToSrch = "";
         }
         catch(err)
         {
-            alert(err.message);
+            console.log(err.message);
         }
     }
     function saveCookie()
@@ -125,7 +125,7 @@ var valueToSrch = "";
         var email = document.getElementById("email").value;
         readCookie();
         var jsonPayload = '{"unameID" : ' + userID + ', "contactFirstName" : "' + ContactFirstName+ '", "contactLastName" : "' + ContactLastName +'", "email" : "'+email+'", "phoneNumber" : "' +phone + '"}';
-        alert(jsonPayload);
+        t(jsonPayload);
         let xhr = new XMLHttpRequest();
         xhr.open("POST",url,true);
         xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -142,7 +142,7 @@ var valueToSrch = "";
         }
         catch(err)
         {
-            alert(err.message);
+            console.log(err.message);
         }
 
 
@@ -184,7 +184,7 @@ function read()
         }
           catch(err)
         {
-            alert(err.message);
+            console.log(err.message);
         }
 }
 
@@ -316,7 +316,6 @@ function displayContacts(jsonData)
         doneButton.innerHTML = "Edit";
         doneButton.id = response.contactNumber;
         doneButton.addEventListener("click", function(){
-         alert("Yes");
          var editID = "form" + this.id;
           d2 = document.getElementById("contact"+this.id);
           d3  = document.getElementById(editID);
@@ -330,7 +329,6 @@ function displayContacts(jsonData)
         document.getElementById("edit-container").appendChild(contentDiv2);
         document.getElementById("big-container").appendChild(contentDiv1);
         editButton.addEventListener("click", function(){
-            alert("Hello");
             var editID = "form" + this.id;
             d2 = document.getElementById("contact"+this.id);
             d3  = document.getElementById(editID);
@@ -376,7 +374,6 @@ function edit(index)
     //. $newEmail . "', phoneNumber='" . $newPhoneNumber . "' WHERE contactNumber=" . $contactNumber;
   xhr.setRequestHeader("contactFirstName", "application/json; charset=UTF-8");
   var jsonPayload = '{"contactFirstName" : "' + newFname + '",  "contactLastName" : "' + newLname + '", "email" : "' + newEmail  + '",  "phoneNumber" : "' + newPhone +'", "contactNumber" : ' + index +'}';
-  alert(jsonPayload);
   try
   {
     xhr.send(jsonPayload);
@@ -387,14 +384,13 @@ function edit(index)
     }
     catch(err)
     {
-      alert(err.message);
+      console.log(err.message);
     }
 }
 function deleteContact(index)
 {
   readCookie();
   var jsonPayload = '{"contactNumber" : ' + index +'}';
-  alert(jsonPayload);
   var url = "http://plsgiveusana.me/api/DeleteContacts.php";
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
@@ -408,7 +404,6 @@ function deleteContact(index)
       if(this.readyState == 4 && this.status == 200)
       {
         var table = document.getElementById("display-table");
-        alert("YEEEES");
         window.location.href = "viewContacts.html";
       }
     };
@@ -416,7 +411,7 @@ function deleteContact(index)
     }
   catch(err)
   {
-    alert(err.message);
+    console.log(err.message);
   }
 
 }
@@ -430,14 +425,9 @@ function searchContact()
   if (xhr.status === 200) {
     console.log(JSON.parse(xhr.responseText));
     var json = JSON.parse(xhr.responseText);
-     if(json.numResults >= 1)
-     {
-	     //alert("Found Contacts"); 
-	     displaySearch(json);
-	     //alert(searchResult);
-     }
-     else
-	alert("NOT FOUND");
+   //alert("Found Contacts");
+    displaySearch(json);
+  //alert(searchResult);
   }
 };
   var payload = JSON.stringify({ unameID: userID, searchString: searchVal});
@@ -566,7 +556,6 @@ function displaySearch(jsonData)
         doneButton.innerHTML = "Done";
         doneButton.id = response.contactNumber;;
         doneButton.addEventListener("click", function(){
-         alert("Yes");
          var editID = "form" + this.id;
 	  d1 = document.getElementById("search-table");
           d2 = document.getElementById("contact"+this.id);
