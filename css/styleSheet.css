@@ -49,8 +49,9 @@
 .view-table
 {
   width: 80%;
-  margin: 0 auto;
-  border-collapse: collapse;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: 65px;
 }
 
 #back-btn1
