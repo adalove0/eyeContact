@@ -67,6 +67,7 @@
   border-radius : 12px;
   font-family: 'Fjalla One', sans-serif;
   margin-left: 20px;
+  margin-right: 46px;
 }
 
 .edit-button
@@ -81,7 +82,7 @@
   margin-bottom : 13px;
   border-radius : 12px;
   font-family: 'Fjalla One', sans-serif;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .searchBar
