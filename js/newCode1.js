@@ -246,7 +246,7 @@ function displayContacts(jsonData)
         phoneContent.innerHTML = response.phoneNumber;
         contentDiv1.appendChild(infotable);
         var editButton = document.createElement("button");
-        editButton.innerHTML = '<i class="material-icons" style="font-size:36px">mode_edit</i>';
+        editButton.innerHTML = "Edit";
         editButton.id = response.contactNumber;
 	editButton.classList.add("edit-button");
         contentDiv1.appendChild(editButton);
@@ -498,7 +498,7 @@ function displaySearch(jsonData)
         phoneContent.innerHTML = response.phoneNumber;
         contentDiv1.appendChild(infotable);
         var editButton = document.createElement("button");
-        editButton.innerHTML = '<i class="material-icons" style="font-size:36px">mode_edit</i>';
+        editButton.innerHTML = "Edit";
         editButton.id = response.contactNumber;
         contentDiv1.appendChild(editButton);
         var backButton1 = document.createElement("button");
@@ -554,9 +554,9 @@ function displaySearch(jsonData)
         contentDiv2.appendChild(addForm);
         contentDiv1.classList.add("new-form");
         var backButton = document.createElement("button");
-        backButton.innerHTML = "Button1";
+        backButton.innerHTML = "Back";
         var doneButton = document.createElement("button");
-        doneButton.innerHTML = "DONE";
+        doneButton.innerHTML = "Done";
         doneButton.id = response.contactNumber;;
         doneButton.addEventListener("click", function(){
          alert("Yes");
