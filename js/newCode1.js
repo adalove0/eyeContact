@@ -155,7 +155,7 @@ var valueToSrch = "";
 function read()
 {
 	
-        document.getElementById("search-button").addEventListener("click",function(){              
+        document.getElementById("search-btn").addEventListener("click",function(){              
 		searchContact();
 	});
         document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
