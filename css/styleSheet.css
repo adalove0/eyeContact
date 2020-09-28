@@ -22,10 +22,10 @@
      cursor: pointer
 }
 
-
-
-
-
+#big-container tr
+{
+  line-height: 75px;
+}
 
 .view-table
 {
