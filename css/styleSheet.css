@@ -2,17 +2,19 @@
 {
   width: 100%;
 }
-  #contactView
-  {
+
+#contactView
+{
   height: auto;
   min-height: 700px;
-  width: 80%;
+  width: 50%;
   margin-right: auto;
   margin-left: auto;
   background: rgba(255, 255, 255, 0.6);
   border-radius : 10px;
   margin-top: 40px;
-  }
+}
+
 #clickableAwesomeFont
 {
      float: right;
@@ -242,4 +244,12 @@ img
 #search-btn:focus
 {
   outline:none;
+}
+
+@media only screen and (max-width: 550px)
+ {
+  #contactView
+  {
+    width: 85%;
+  }
 }
