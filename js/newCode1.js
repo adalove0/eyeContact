@@ -427,9 +427,8 @@ function searchContact()
     var json = JSON.parse(xhr.responseText);
      if(json.numResults >= 1)
      {
-	     //alert("Found Contacts");
-	     var searchResult = JSON.stringify(json); 
-	     displaySearch(searchResult);
+	     //alert("Found Contacts"); 
+	     displaySearch(json);
 	     //alert(searchResult);
      }
      else
