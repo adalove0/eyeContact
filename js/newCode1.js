@@ -448,6 +448,7 @@ function displaySearch(jsonData)
 {
     document.getElementById("container").style.display = "none";
     document.getElementById("searchView").style.display = "block";
+    document.getElementById("back-search").style.display = "block";
     var table = document.createElement("tbody");
     table.id = "search-table";
     document.getElementById("searchTable").appendChild(table);
