@@ -252,7 +252,7 @@ function displayContacts(jsonData)
         contentDiv1.appendChild(editButton);
 	contentDiv1.classList.add("view-table");
         var backButton1 = document.createElement("button");
-        backButton1.innerHTML = "Button2";
+        backButton1.innerHTML = "Back";
 	backButton1.id = "back-btn1";
         contentDiv1.appendChild(backButton1);
         var contentDiv2 = document.createElement("div");
@@ -306,9 +306,9 @@ function displayContacts(jsonData)
         contentDiv2.appendChild(addForm);
         contentDiv1.classList.add("contact-form");
         var backButton = document.createElement("button");
-        backButton.innerHTML = "Button1";
+        backButton.innerHTML = "Back";
         var doneButton = document.createElement("button");
-        doneButton.innerHTML = "DONE";
+        doneButton.innerHTML = "Edit";
         doneButton.id = response.contactNumber;;
         doneButton.addEventListener("click", function(){
          alert("Yes");
