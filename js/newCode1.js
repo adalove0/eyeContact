@@ -218,9 +218,6 @@ function displayContacts(jsonData)
         var contentDiv1 = document.createElement("div");
         var newLine = document.createElement("br");
         contentDiv1.id = "contact" + response.contactNumber;
-        var image = document.createElement("img");
-        image.src= "images/user.jpg";
-        image.id = "user-img";
         contentDiv1.style.display = "none";
         var infotable = document.createElement("table");
 	infotable.id = "contact-view";
@@ -257,7 +254,6 @@ function displayContacts(jsonData)
         contentDiv1.appendChild(backButton1);
         var contentDiv2 = document.createElement("div");
         contentDiv2.id = "form" + response.contactNumber;
-        contentDiv2.appendChild(image);
         var addForm = document.createElement("form");
         var fnamelabel = document.createElement("label");
         fnamelabel.setAttribute("for","fnamelabel");
