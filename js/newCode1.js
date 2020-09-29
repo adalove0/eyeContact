@@ -324,7 +324,7 @@ function displayContacts(jsonData)
 	        document.getElementById("phoneVal").value = document.getElementById("phone1").value;
 	        document.getElementById("emailVal").value = document.getElementById("email1").value;
 	   });
-        })
+        });
 	    
             /*var cellID = "contact"+this.id;
             d1 = document.getElementById("contactView");
