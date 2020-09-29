@@ -196,7 +196,7 @@ function displayContacts(jsonData)
          cellName.innerHTML = response.contactFirstName+" "+ response.contactLastName;
 	 cellName.classList.add("Name");
         var cellEdit = row.insertCell();
-        cellEdit.id = response.contactNumber;
+        cellEdit.id = i;
 	cellEdit.classList.add("Edit");
         cellEdit.style.cursor = "pointer";
         cellEdit.innerHTML = '<i style="font-size:24px" class="fa">&#xf044;</i>';
@@ -205,7 +205,24 @@ function displayContacts(jsonData)
 	cellDelete.classList.add("Delete");
         cellDelete.style.cursor = "pointer";
         cellDelete.innerHTML = '<i style="font-size:24px" class="fa">&#xf014;</i>';
-        cellDelete.addEventListener("click", function() {
+        cellEdit.addEventListener("click", function() {
+	        var contactID = jsonData.contacts[this.id].contactNumber;
+                document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
+	    	document.getElementById("lname1").value = jsonData.contacts[this.id].contactLastName;
+	    	document.getElementById("phone1").value = jsonData.contacts[this.id].phoneNumber;
+	    	document.getElementById("email1").value = jsonData.contacts[this.id].email;
+	    	document.getElementById("edit-container").style.display = "block";
+            	document.getElementById("contactView").style.display = "none";
+	    	document.getElementById("edit-btn").addEventListener("click",function(){
+		editContact(contactID);
+		document.getElementById("edit-container").style.display = "none";
+                document.getElementById("big-container").style.display = "block";
+	        document.getElementById("fnameVal").value = document.getElementById("fname1").value;
+	        document.getElementById("lnameVal").value = document.getElementById("lname1").value;
+	        document.getElementById("phoneVal").value = document.getElementById("phone1").value;
+	        document.getElementById("emailVal").value = document.getElementById("email1").value;
+         });
+	 cellDelete.addEventListener("click", function() {
             deleteContact(this.id);
          });
         //var contentDiv1 = document.createElement("div");
