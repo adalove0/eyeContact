@@ -297,10 +297,10 @@ function displayContacts(jsonData)
 
 function editContact(index)
 {
-  var newFname = document.getElementById("editFname"+index).value;
-  var newLname = document.getElementById("editLname"+index).value;
-  var newPhone = document.getElementById("editEmail"+index).value;
-  var newEmail = document.getElementById("editPhone"+index).value;
+  var newFname = document.getElementById("fname1").value;
+  var newLname = document.getElementById("lname1").value;
+  var newPhone = document.getElementById("phone1").value;
+  var newEmail = document.getElementById("email1").value;
   readCookie();
   var url = "http://plsgiveusana.me/api/UpdateContact.php";
   var xhr = new XMLHttpRequest();
