@@ -5,8 +5,8 @@
 	$username = "creator";
 	$password = "plsdonthackmebro2";
 	
-	$searchResults = '{"results":[{';
-	$numResults = 0;
+	$searchResults = '{"contacts":[{';
+	$numContacts = 0;
 	
 	$conn = new mysqli($servername, $username, $password, $database);
 	if ($conn->connect_error) 
@@ -21,7 +21,7 @@
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc())
 			{
-				if( $numResults > 0 )
+				if( $numContacts > 0 )
 				{
 					$searchResults .= ",{";
 				}
@@ -29,10 +29,10 @@
 				$row["contactFirstName"] .'","contactLastName":"' . $row["contactLastName"] . '","email":"' .
 				$row["email"] .'","phoneNumber":"' . $row["phoneNumber"] . '","dateCreated":"' . $row["dateCreated"]
 				. '"}';
-				$numResults++;
+				$numContacts++;
 			}
 			$searchResults .= '],';
-			returnWithInfo( $searchResults, $numResults );
+			returnWithInfo( $searchResults, $numContacts );
 		}
 		else
 		{
@@ -53,13 +53,13 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"results":[{}],"numContacts":0,"error":"' . $err . '"}';
+		$retValue = '{"contacts":[{}],"numContacts":0,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $searchResults, $numResults )
+	function returnWithInfo( $searchResults, $numContacts )
 	{
-		$retValue = $searchResults . '"numResults":' . $numResults .',"error":""}';
+		$retValue = $searchResults . '"numContacts":' . $numContacts .',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
