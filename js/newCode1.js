@@ -278,18 +278,22 @@ function displayContacts(jsonData)
             document.getElementById("big-container").style.display = "block";
         });
         cellName.addEventListener("click", function(){
-	    document.getElementById("fnameVal").value = jsonData.contacts[this.id].contactFirstName;
-	    document.getElementById("lnameVal").value = jsonData.contacts[this.id].contactLastName;
-	    document.getElementById("phoneVal").value = jsonData.contacts[this.id].phoneNumber;
-	    document.getElementById("emailVal").value = jsonData.contacts[this.id].email;
+	    var firstName = jsonData.contacts[this.id].contactFirstName;
+	    var lastName = jsonData.contacts[this.id].contactLastName;
+	    var phoneNumber = jsonData.contacts[this.id].phoneNumber;
+	    var contactID = jsonData.contacts[this.id].contactNumber;
+	    var email =  jsonData.contacts[this.id].email;
+	    document.getElementById("fnameVal").value = firstName;
+	    document.getElementById("lnameVal").value = lastName;
+	    document.getElementById("phoneVal").value = phoneNumber;
+	    document.getElementById("emailVal").value = email;
 	    document.getElementById("container").style.display = "none";
             document.getElementById("big-container").style.display = "block";
 	    document.getElementById("edit-button1").addEventListener("click", function(){
-	    	var contactID = jsonData.contacts[this.id].contactNumber;
-	    	document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
-	    	document.getElementById("lname1").value = jsonData.contacts[this.id].contactLastName;
-	    	document.getElementById("phone1").value = jsonData.contacts[this.id].phoneNumber;
-	    	document.getElementById("email1").value = jsonData.contacts[this.id].email;
+	    	document.getElementById("fname1").value = firstName;
+	    	document.getElementById("lname1").value = lastName
+	    	document.getElementById("phone1").value = phoneNumber;
+	    	document.getElementById("email1").value = email;
 	    	document.getElementById("edit-container").style.display = "block";
             	document.getElementById("big-container").style.display = "none";
 	    	document.getElementById("edit-btn").addEventListener("click",function(){
