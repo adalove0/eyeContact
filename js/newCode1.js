@@ -221,7 +221,8 @@ function displayContacts(jsonData)
 	        document.getElementById("lnameVal").value = document.getElementById("lname1").value;
 	        document.getElementById("phoneVal").value = document.getElementById("phone1").value;
 	        document.getElementById("emailVal").value = document.getElementById("email1").value;
-         });
+            });
+	});
 	 cellDelete.addEventListener("click", function() {
             deleteContact(this.id);
          });
