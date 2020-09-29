@@ -146,8 +146,10 @@ var valueToSrch = "";
      }
 function read()
 {
+	readCookie();
 	if(userID == 0)
 	{
+		
 		document.getElementById("contactView").style.display = "none";
 		alert("You're not logged in");
                 window.location.href = "LandingPage.html";
@@ -162,7 +164,6 @@ function read()
             window.location.href = "addContact.html";
         });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
-        readCookie();
         console.log(userID);
          var data= '{"unameID" : ' + userID + '}';
          console.log(data);
