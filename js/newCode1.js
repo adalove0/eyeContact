@@ -258,8 +258,8 @@ function displayContacts(jsonData)
         });
         //contentDiv2.appendChild(backButton);
         //contentDiv2.appendChild(doneButton);
-        contentDiv2.style.display = "none";
-        document.getElementById("edit-container").appendChild(contentDiv2);
+       // contentDiv2.style.display = "none";
+        //document.getElementById("edit-container").appendChild(contentDiv2);
         document.getElementById("big-container").appendChild(contentDiv1);
         editButton.addEventListener("click", function(){
 	    document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
