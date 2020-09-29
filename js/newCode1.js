@@ -262,12 +262,16 @@ function displayContacts(jsonData)
         //document.getElementById("edit-container").appendChild(contentDiv2);
         document.getElementById("big-container").appendChild(contentDiv1);
         editButton.addEventListener("click", function(){
+	    var contactID = jsonData.contacts[this.id].contactNumber;
 	    document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
 	    document.getElementById("lname1").value = jsonData.contacts[this.id].contactLastName;
 	    document.getElementById("phone1").value = jsonData.contacts[this.id].phoneNumber;
 	    document.getElementById("email1").value = jsonData.contacts[this.id].email;
 	    document.getElementById("edit-container").style.display = "block";
-             document.getElementById("big-container").style.display = "none";
+            document.getElementById("big-container").style.display = "none";
+	    document.getElementById("edit-btn").addEventListener("click",function(){
+		editContact(contactID);
+		});
         });
 
         cellName.addEventListener("click", function(){
@@ -291,7 +295,7 @@ function displayContacts(jsonData)
      }
 }
 
-function edit(index)
+function editContact(index)
 {
   var newFname = document.getElementById("editFname"+index).value;
   var newLname = document.getElementById("editLname"+index).value;
