@@ -103,11 +103,8 @@ var valueToSrch = "";
 
         if( userID < 0 )
         {
-            console.log(userID);
+            window.location.href = "LandingPage.html";
         }
-       
-            console.log(userID);//display name
- 
     }
 
     function logout()
