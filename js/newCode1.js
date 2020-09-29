@@ -273,7 +273,10 @@ function displayContacts(jsonData)
 		editContact(contactID);
 		});
         });
-
+	document.getElementById("back-btn").addEventListener("click",function(){
+	    document.getElementById("edit-container").style.display = "none";
+            document.getElementById("big-container").style.display = "block";
+        });
         cellName.addEventListener("click", function(){
             var cellID = "contact"+this.id;
             d1 = document.getElementById("contactView");
