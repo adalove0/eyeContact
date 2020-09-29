@@ -199,12 +199,15 @@ function displayContacts(jsonData)
          cellName.id = i;
          cellName.style.width = "780px";
          cellName.innerHTML = response.contactFirstName+" "+ response.contactLastName;
+	 cellName.classList.add("Name");
         var cellEdit = row.insertCell();
         cellEdit.id = response.contactNumber;
+	cellEdit.classList.add("Edit");
         cellEdit.style.cursor = "pointer";
         cellEdit.innerHTML = '<i style="font-size:24px" class="fa">&#xf044;</i>';
         var cellDelete = row.insertCell();
         cellDelete.id = response.contactNumber;
+	cellDelete.classList.add("Delete");
         cellDelete.style.cursor = "pointer";
         cellDelete.innerHTML = '<i style="font-size:24px" class="fa">&#xf014;</i>';
         cellDelete.addEventListener("click", function() {
