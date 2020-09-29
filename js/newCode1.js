@@ -203,6 +203,10 @@ function displayContacts(jsonData)
         cellDelete.id = response.contactNumber;
         cellDelete.style.cursor = "pointer";
         cellDelete.innerHTML = '<i style="font-size:24px" class="fa">&#xf014;</i>';
+        var cellEdit = row.insertCell();
+        cellEdit.id = response.contactNumber;
+        cellEdit.style.cursor = "pointer";
+        cellEdit.innerHTML = '<i style="font-size:24px" class="fa">&#xf044;</i>';
         cellDelete.addEventListener("click", function() {
             deleteContact(this.id);
          });
