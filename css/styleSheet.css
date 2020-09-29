@@ -28,6 +28,14 @@
   border-radius : 10px;
   margin-top: 40px;
 }
+.Name
+{
+	width: 80%;
+}
+.Edit, .Delete
+{
+	width: 10%;
+}
 #contactView tbody
 {
    width: 100%;
