@@ -264,8 +264,8 @@ function displayContacts(jsonData)
         editButton.addEventListener("click", function(){
 	    document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
 	    document.getElementById("lname1").value = jsonData.contacts[this.id].contactLastName;
-	    document.getElementById("phone1").value = jsonData.contacts[this.id].contactphoneNumber;
-	    document.getElementById("email1").value = jsonData.contacts[this.id].contactEmail;
+	    document.getElementById("phone1").value = jsonData.contacts[this.id].phoneNumber;
+	    document.getElementById("email1").value = jsonData.contacts[this.id].email;
 	    document.getElementById("edit-container").style.display = "block";
              document.getElementById("big-container").style.display = "none";
         });
