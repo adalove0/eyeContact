@@ -99,7 +99,6 @@ var valueToSrch = "";
         var currData = dataArrays[0].split("=");
         if(currData[0] == "id")
             userID = parseInt(currData[1].trim());
-        console.log(userID);
     }
 
     function logout()
@@ -107,6 +106,8 @@ var valueToSrch = "";
         userID = 0;
         document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
         window.location.href = "LandingPage.html";
+	document.cookie = "";
+	
     }
     function addContact()
     {
@@ -145,6 +146,14 @@ var valueToSrch = "";
      }
 function read()
 {
+	if(userID == 0)
+	{
+		document.getElementById("contactView").style.display = "none";
+		alert("You're not logged in");
+                window.location.href = "LandingPage.html";
+		
+	}
+		
 	
         document.getElementById("search-btn").addEventListener("click",function(){              
 		searchContact();
