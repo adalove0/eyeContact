@@ -419,12 +419,7 @@ function searchContact()
     var json = JSON.parse(xhr.responseText);
    //alert("Found Contacts");
     var clearTbody = document.getElementById("display-table");
-    var table = document.getElementById("displayTable");
-    var tbody = document.getElementById("display-table");
-    if (tbody != null) {
-	table.removeChild(tbody);
-	tbody = null;
-    }
+    document.getElementById("displayTable").innerHTML = "";
     displayContacts(json);
   //alert(searchResult);
   }
