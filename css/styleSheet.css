@@ -30,15 +30,15 @@
 }
 .Name
 {
-	width: 80%;
+	width: 64%;
 }
 .Edit, .Delete
 {
-	width: 10%;
+	width: 18%;
 }
 #contactView tbody
 {
-   width: 100%;
+   width: 18%;
 }
 
 #clickableAwesomeFont
