@@ -147,7 +147,7 @@ var valueToSrch = "";
 function read()
 {
 	//readCookie();
-        document.getElementById("search-btn").addEventListener("click",function(){              
+        document.getElementById("search-btn").addEventListener("click",function(){
 		searchContact();
 	});
         document.getElementById("clickableAwesomeFont").addEventListener("click",function(){
@@ -184,7 +184,6 @@ function displayContacts(jsonData)
 {
     var table = document.createElement("tbody");
     table.id = "display-table";
-    console.log(document.getElementById("displayTable").innerHTML);
     document.getElementById("displayTable").appendChild(table);
     var num = jsonData["numContacts"];
     var contactsList = jsonData["contacts"];
@@ -420,7 +419,12 @@ function searchContact()
     var json = JSON.parse(xhr.responseText);
    //alert("Found Contacts");
     var clearTbody = document.getElementById("display-table");
-    clearTbody.remove();
+    var table = document.getElementById("displayTable");
+    var tbody = document.getElementById("display-table);
+    if (tbody != null) {
+	table.removeChild(tbody);
+	tbody = null;
+    }
     displayContacts(json);
   //alert(searchResult);
   }
