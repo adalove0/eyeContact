@@ -418,7 +418,9 @@ function searchContact()
     console.log(JSON.parse(xhr.responseText));
     var json = JSON.parse(xhr.responseText);
    //alert("Found Contacts");
-    displaySearch(json);
+    var clearTbody = document.getElementById("display-table");
+    clearTbody.innerHTML = "";
+    displayContacts(json);
   //alert(searchResult);
   }
 };
@@ -426,7 +428,7 @@ function searchContact()
   xhr.send(payload);
 }
 	
-function displaySearch(jsonData)
+/*function displaySearch(jsonData)
 {
     document.getElementById("container").style.display = "none";
     document.getElementById("searchView").style.display = "block";
