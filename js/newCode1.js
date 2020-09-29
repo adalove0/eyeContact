@@ -338,13 +338,13 @@ function displayContacts(jsonData)
             d2 = document.getElementById(cellID);
             if(d2.style.display == "none")
             {
-		document.getElementById("edit-container").style.display = "none";
+		document.getElementById("contactView").style.display = "none";
                 d2.style.display = "block";
 		document.getElementById("big-container").style.display = "block";
              }
         });
         backButton.addEventListener("click",function(){
-		document.getElementById("big-container").style.display = "block";
+		document.getElementById("big-container").style.display = "none";
 		document.getElementById("edit-container").style.display = "block";
         });
         backButton1.addEventListener("click",function(){
