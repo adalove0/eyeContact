@@ -326,6 +326,7 @@ function displayContacts(jsonData)
             d3  = document.getElementById(editID);
             if(d3.style.display == "none")
             {
+		document.getElementById("edit-container").style.display = "block";
                 d2.style.display = "none";
                 d3.style.display = "block";
             }
