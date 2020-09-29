@@ -315,13 +315,13 @@ function displayContacts(jsonData)
 	     document.getElementById("container").style.display = "block";
             document.getElementById("big-container").style.display = "none";
 	});	
-        backButton.addEventListener("click",function(){
+        /*backButton.addEventListener("click",function(){
 		document.getElementById("big-container").style.display = "none";
 		document.getElementById("edit-container").style.display = "block";
         });
         backButton1.addEventListener("click",function(){
            window.location.href = "viewContacts.html";
-        });
+        });*/
      }
 }
 
