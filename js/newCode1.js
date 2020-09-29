@@ -338,14 +338,14 @@ function displayContacts(jsonData)
             d2 = document.getElementById(cellID);
             if(d2.style.display == "none")
             {
-		document.getElementById("big-container").style.display = "block";
-                d1.style.display = "none";
+		document.getElementById("edit-container").style.display = "none";
                 d2.style.display = "block";
+		document.getElementById("big-container").style.display = "block";
              }
         });
         backButton.addEventListener("click",function(){
-                d3.style.display = "none";
-                d2.style.display = "block";
+		document.getElementById("big-container").style.display = "block";
+		document.getElementById("edit-container").style.display = "block";
         });
         backButton1.addEventListener("click",function(){
            window.location.href = "viewContacts.html";
