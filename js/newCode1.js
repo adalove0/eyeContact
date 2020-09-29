@@ -196,7 +196,7 @@ function displayContacts(jsonData)
          var cellName = row.insertCell();
          cellName.classList.add("accordion");
          cellName.style.cursor = "pointer";
-         cellName.id = response.contactNumber;
+         cellName.id = i;
          cellName.style.width = "780px";
          cellName.innerHTML = response.contactFirstName+" "+ response.contactLastName;
         var cellDelete = row.insertCell();
@@ -234,9 +234,9 @@ function displayContacts(jsonData)
         phoneContent.innerHTML = response.phoneNumber;
         contentDiv1.appendChild(infotable);
         var editButton = document.createElement("button");
-        editButton.innerHTML = "Edit";
-        editButton.id = i;
-	editButton.classList.add("edit-button");
+        editButton.innerHTML = "Edit";*/
+        //editButton.id = i;
+	/*editButton.classList.add("edit-button");
         contentDiv1.appendChild(editButton);
 	contentDiv1.classList.add("view-table");
         var backButton1 = document.createElement("button");
@@ -247,8 +247,8 @@ function displayContacts(jsonData)
         backButton.innerHTML = "Back";
         var doneButton = document.createElement("button");
         doneButton.innerHTML = "Edit";
-        doneButton.id = response.contactNumber;*/
-        /*doneButton.addEventListener("click", function(){
+        doneButton.id = response.contactNumber;
+        doneButton.addEventListener("click", function(){
          var editID = "form" + this.id;
           d2 = document.getElementById("contact"+this.id);
           d3  = document.getElementById(editID);
@@ -261,7 +261,7 @@ function displayContacts(jsonData)
        // contentDiv2.style.display = "none";
         //document.getElementById("edit-container").appendChild(contentDiv2);
         //document.getElementById("big-container").appendChild(contentDiv1);
-        editButton.addEventListener("click", function(){
+        /*editButton.addEventListener("click", function(){
 	    var contactID = jsonData.contacts[this.id].contactNumber;
 	    document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
 	    document.getElementById("lname1").value = jsonData.contacts[this.id].contactLastName;
@@ -272,19 +272,31 @@ function displayContacts(jsonData)
 	    document.getElementById("edit-btn").addEventListener("click",function(){
 		editContact(contactID);
 		});
-        });
+        });*/
 	document.getElementById("back-btn").addEventListener("click",function(){
 	    document.getElementById("edit-container").style.display = "none";
             document.getElementById("big-container").style.display = "block";
         });
         cellName.addEventListener("click", function(){
-	    var contactID = jsonData.contacts[this.id].contactNumber;
 	    document.getElementById("fnameVal").value = jsonData.contacts[this.id].contactFirstName;
 	    document.getElementById("lnameVal").value = jsonData.contacts[this.id].contactLastName;
 	    document.getElementById("phoneVal").value = jsonData.contacts[this.id].phoneNumber;
 	    document.getElementById("emailVal").value = jsonData.contacts[this.id].email;
-	    document.getElementById("edit-container").style.display = "block";
-            document.getElementById("big-container").style.display = "none";
+	    document.getElementById("container").style.display = "none";
+            document.getElementById("big-container").style.display = "block";
+	    document.getElementById("edit-button1").addEventListener("click", function(){
+	    	var contactID = jsonData.contacts[this.id].contactNumber;
+	    	document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
+	    	document.getElementById("lname1").value = jsonData.contacts[this.id].contactLastName;
+	    	document.getElementById("phone1").value = jsonData.contacts[this.id].phoneNumber;
+	    	document.getElementById("email1").value = jsonData.contacts[this.id].email;
+	    	document.getElementById("edit-container").style.display = "block";
+            	document.getElementById("big-container").style.display = "none";
+	    	document.getElementById("edit-btn").addEventListener("click",function(){
+		editContact(contactID);
+	   });
+        })
+	    
             /*var cellID = "contact"+this.id;
             d1 = document.getElementById("contactView");
             d2 = document.getElementById(cellID);
@@ -408,7 +420,7 @@ function searchContact()
          var cellName = row.insertCell();
          cellName.classList.add("accordion");
          cellName.style.cursor = "pointer";
-         cellName.id = response.contactNumber;
+         cellName.id = i;
          cellName.style.width = "780px";
          cellName.innerHTML = response.contactFirstName+" "+ response.contactLastName;
         var cellDelete = row.insertCell();
