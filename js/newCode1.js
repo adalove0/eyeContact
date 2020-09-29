@@ -100,11 +100,6 @@ var valueToSrch = "";
         if(currData[0] == "id")
             userID = parseInt(currData[1].trim());
         console.log(userID);
-
-        if( userID < 0 )
-        {
-            window.location.href = "LandingPage.html";
-        }
     }
 
     function logout()
