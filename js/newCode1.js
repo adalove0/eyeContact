@@ -327,7 +327,7 @@ function displayContacts(jsonData)
             if(d3.style.display == "none")
             {
 		document.getElementById("edit-container").style.display = "block";
-                d2.style.display = "none";
+               document.getElementById("big-container").style.display = "none";
                 d3.style.display = "block";
             }
         });
