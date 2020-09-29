@@ -312,10 +312,6 @@ function editContact(index)
   try
   {
     xhr.send(jsonPayload);
-    document.getElementById("show-fname"+index).innerHTML = "First name: "+'&nbsp &nbsp &nbsp &nbsp' + newFname;
-    document.getElementById("show-lname"+index).innerHTML = "Last name: "+'&nbsp &nbsp &nbsp &nbsp &nbsp' + newLname;
-    document.getElementById("show-phone"+index).innerHTML = "Phone "+'&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp'+ newPhone;
-    document.getElementById("show-email"+index).innerHTML = "Email: "+'&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp' + newEmail;
     }
     catch(err)
     {
