@@ -206,11 +206,11 @@ function displayContacts(jsonData)
         cellDelete.addEventListener("click", function() {
             deleteContact(this.id);
          });
-        var contentDiv1 = document.createElement("div");
-        var newLine = document.createElement("br");
-        contentDiv1.id = "contact" + response.contactNumber;
-        contentDiv1.style.display = "none";
-        var infotable = document.createElement("table");
+        //var contentDiv1 = document.createElement("div");
+        //var newLine = document.createElement("br");
+        //contentDiv1.id = "contact" + response.contactNumber;
+        //contentDiv1.style.display = "none";
+        /*var infotable = document.createElement("table");
 	infotable.id = "contact-view";
         var fnamerow = infotable.insertRow();
         var fnameTitle = fnamerow.insertCell();
@@ -247,20 +247,20 @@ function displayContacts(jsonData)
         backButton.innerHTML = "Back";
         var doneButton = document.createElement("button");
         doneButton.innerHTML = "Edit";
-        doneButton.id = response.contactNumber;
-        doneButton.addEventListener("click", function(){
+        doneButton.id = response.contactNumber;*/
+        /*doneButton.addEventListener("click", function(){
          var editID = "form" + this.id;
           d2 = document.getElementById("contact"+this.id);
           d3  = document.getElementById(editID);
            edit(this.id);
            d2.style.display = "block";
            d3.style.display = "none";
-        });
+        });*/
         //contentDiv2.appendChild(backButton);
         //contentDiv2.appendChild(doneButton);
        // contentDiv2.style.display = "none";
         //document.getElementById("edit-container").appendChild(contentDiv2);
-        document.getElementById("big-container").appendChild(contentDiv1);
+        //document.getElementById("big-container").appendChild(contentDiv1);
         editButton.addEventListener("click", function(){
 	    var contactID = jsonData.contacts[this.id].contactNumber;
 	    document.getElementById("fname1").value = jsonData.contacts[this.id].contactFirstName;
@@ -278,7 +278,14 @@ function displayContacts(jsonData)
             document.getElementById("big-container").style.display = "block";
         });
         cellName.addEventListener("click", function(){
-            var cellID = "contact"+this.id;
+	    var contactID = jsonData.contacts[this.id].contactNumber;
+	    document.getElementById("fnameVal").value = jsonData.contacts[this.id].contactFirstName;
+	    document.getElementById("lnameVal").value = jsonData.contacts[this.id].contactLastName;
+	    document.getElementById("phoneVal").value = jsonData.contacts[this.id].phoneNumber;
+	    document.getElementById("emailVal").value = jsonData.contacts[this.id].email;
+	    document.getElementById("edit-container").style.display = "block";
+            document.getElementById("big-container").style.display = "none";
+            /*var cellID = "contact"+this.id;
             d1 = document.getElementById("contactView");
             d2 = document.getElementById(cellID);
             if(d2.style.display == "none")
@@ -286,8 +293,16 @@ function displayContacts(jsonData)
 		document.getElementById("contactView").style.display = "none";
                 d2.style.display = "block";
 		document.getElementById("big-container").style.display = "block";
-             }
+             }*/
         });
+	document.getElementById("edit-button1").addEventListener("click",function(){
+	     document.getElementById("edit-container").style.display = "block";
+            document.getElementById("big-container").style.display = "none";
+	});
+	document.getElementById("back-button1").addEventListener("click",function(){
+	     document.getElementById("container").style.display = "block";
+            document.getElementById("big-container").style.display = "none";
+	});	
         backButton.addEventListener("click",function(){
 		document.getElementById("big-container").style.display = "none";
 		document.getElementById("edit-container").style.display = "block";
