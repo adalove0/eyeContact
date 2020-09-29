@@ -45,7 +45,6 @@ var valueToSrch = "";
     function login()
     {
         userID = 0;
-        console.log(userID);
         var url = 'http://plsgiveusana.me/api/Login.php';
         var username = document.getElementById("Login").value;
         var password = MD5(document.getElementById("Password").value);
@@ -64,7 +63,6 @@ var valueToSrch = "";
             xhr.send(data);
             var response = JSON.parse(xhr.responseText);
             userID = response["unameID"];
-            console.log(userID);
             if( userID == 0)
             {
                document.getElementById("login-text").innerHTML = "Username/Password combination is wrong";
@@ -155,9 +153,7 @@ function read()
         });
         var url = 'http://plsgiveusana.me/api/GetContacts.php';
 	readCookie();
-        console.log(userID);
          var data= '{"unameID" : ' + userID + '}';
-         console.log(data);
          var xhr = new XMLHttpRequest();
          xhr.open("POST",url,true);
          xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
@@ -168,7 +164,6 @@ function read()
                  if(this.readyState == 4 && this.status == 200)
                  {
                      var jsonData = JSON.parse(xhr.responseText);
-                     console.log(jsonData);
                      displayContacts(jsonData);
                  }
              };
@@ -402,7 +397,6 @@ function searchContact()
   xhr.open("post", searchUrl, true);
   xhr.onload = () => {
   if (xhr.status === 200) {
-    console.log(JSON.parse(xhr.responseText));
     var json = JSON.parse(xhr.responseText);
    //alert("Found Contacts");
     var clearTbody = document.getElementById("display-table");
