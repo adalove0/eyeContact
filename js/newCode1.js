@@ -298,6 +298,12 @@ function displayContacts(jsonData)
             	document.getElementById("big-container").style.display = "none";
 	    	document.getElementById("edit-btn").addEventListener("click",function(){
 		editContact(contactID);
+		document.getElementById("edit-container").style.display = "none";
+                document.getElementById("big-container").style.display = "block";
+	        document.getElementById("fnameVal").value = document.getElementById("fname1").value;
+	        document.getElementById("lnameVal").value = document.getElementById("lname1").value;
+	        document.getElementById("phoneVal").value = document.getElementById("phone1").value;
+	        document.getElementById("emailVal").value = document.getElementById("email1").value;
 	   });
         })
 	    
@@ -313,11 +319,12 @@ function displayContacts(jsonData)
         });
 	document.getElementById("edit-button1").addEventListener("click",function(){
 	     document.getElementById("edit-container").style.display = "block";
-            document.getElementById("big-container").style.display = "none";
+             document.getElementById("big-container").style.display = "none";		
 	});
 	document.getElementById("back-button1").addEventListener("click",function(){
-	     document.getElementById("container").style.display = "block";
-            document.getElementById("big-container").style.display = "none";
+	    // document.getElementById("container").style.display = "block";
+            //document.getElementById("big-container").style.display = "none";
+		window.location.href = "viewContacts.html";
 	});	
         /*backButton.addEventListener("click",function(){
 		document.getElementById("big-container").style.display = "none";
