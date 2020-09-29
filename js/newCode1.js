@@ -420,7 +420,7 @@ function searchContact()
    //alert("Found Contacts");
     var clearTbody = document.getElementById("display-table");
     var table = document.getElementById("displayTable");
-    var tbody = document.getElementById("display-table);
+    var tbody = document.getElementById("display-table");
     if (tbody != null) {
 	table.removeChild(tbody);
 	tbody = null;
