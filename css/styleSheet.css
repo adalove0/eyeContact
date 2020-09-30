@@ -33,7 +33,7 @@ h1, h3
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
-    color:  #CF584C;
+    color:  #B62415;
     align-self: flex-start;
     margin-left: 25px;
 }
@@ -65,7 +65,7 @@ h1, h3
 }
 #btn-edit button{
     width: 30%;
-    background: #CF584C;
+    background: #B62415;
     color: white;
     height: 50px;
     outline: none;
@@ -79,11 +79,11 @@ h1, h3
 }
 #btn-edit button:hover {
     background: white;
-    color: #CF584C;
+    color: #B62415;
 }
 .edit-title
 {
-     color: #CF584C;
+     color: #B62415;
 }
 	
 .button:hover {
@@ -334,7 +334,7 @@ form
     	margin-bottom: 15px;
 	width: 90%;
 	padding: 2px 0;
-	border: 2px solid #CF584C;;
+	border: 2px solid #B62415;
 	background: white;
         border-radius: 10px;
 }
