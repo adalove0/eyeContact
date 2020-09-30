@@ -24,13 +24,11 @@
 {
    background-color:green;
    color:white;
-   text-align:center;
 }
 .Delete:hover
 {
   background-color:red;
   color:white;
-  text-align:center;
 }
 	
 	
@@ -54,6 +52,7 @@
 .Edit, .Delete
 {
 	width: 18%;
+	text-align:center;
 }
 #contactView tbody
 {
