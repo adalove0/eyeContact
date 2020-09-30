@@ -7,7 +7,11 @@
    color: white;
    background:  #000080;
 }
-	
+#btn-container
+{
+	text-align: center;
+ 	display: inline-block;
+}
 button
 {
 	cursor:pointer;
