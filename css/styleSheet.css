@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 .container
 {
   width: 100%;
@@ -6,6 +7,11 @@
 {   
    color: white;
    background:  #000080;
+}
+h1
+{
+	font-family: 'Noto Sans KR', sans-serif;
+	 background:  #000080;
 }
 #btn-container
 {
