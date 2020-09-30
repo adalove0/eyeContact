@@ -8,10 +8,10 @@
    color: white;
    background:  #000080;
 }
-h1
+h1, h3
 {
 	font-family: 'Noto Sans KR', sans-serif;
-	 background:  #000080;
+	 color:  #000080;
 }
 #btn-container
 {
