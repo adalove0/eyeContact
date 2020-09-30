@@ -17,9 +17,23 @@
   font-family: 'Fjalla One', sans-serif;
 }
 #table1 tr:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: white;
+    background-color: white;
+    color: black;
     }
+.Edit:hover
+{
+   background-color:green;
+   color:white;
+   text-align:center;
+}
+.Delete:hover
+{
+  background-color:red;
+  color:white;
+  text-align:center;
+}
+	
+	
 #contactView
 {
   height: auto;
