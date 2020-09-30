@@ -224,7 +224,8 @@ function displayContacts(jsonData)
             });
 	});
 	 cellDelete.addEventListener("click", function() {
-            deleteContact(this.id);
+            if (window.confirm("Are you sure you want to delete this contact?"))
+            	deleteContact(this.id);
          });
         //var contentDiv1 = document.createElement("div");
         //var newLine = document.createElement("br");
