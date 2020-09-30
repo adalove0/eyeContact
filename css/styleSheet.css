@@ -345,4 +345,8 @@ form
   {
     width: 93%;
   }
+  #search-target
+  {
+     width: 50%;
+  } 
 }
