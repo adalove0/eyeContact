@@ -295,8 +295,9 @@ function displayContacts(jsonData)
 		});
         });*/
 	  document.getElementById("back-btn").addEventListener("click",function(){
-	    document.getElementById("edit-container").style.display = "none";
-            document.getElementById("container").style.display = "block";
+	    //document.getElementById("edit-container").style.display = "none";
+            //document.getElementById("container").style.display = "block";
+	     window.location.href = "viewContacts.html";
         });
         cellName.addEventListener("click", function(){
 	    var firstName = jsonData.contacts[this.id].contactFirstName;
