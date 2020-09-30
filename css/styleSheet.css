@@ -2,6 +2,12 @@
 {
   width: 100%;
 }
+.log-btn
+{   
+   color: white;
+   background:  #000080;
+}
+	
 
 #back-search /* For Search-Container Dont Use */
 {
