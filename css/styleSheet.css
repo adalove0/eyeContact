@@ -13,6 +13,19 @@
  	display: inline-block;
 	width: 100%;
 }
+#btn-container button{
+    width: 30%;
+    background: #000080;
+    color: white;
+    height: 50px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 13px;
+    border-radius: 12px;
+    font-family: 'Fjalla One', sans-serif;
+}
 button
 {
 	cursor:pointer;
