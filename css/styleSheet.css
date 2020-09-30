@@ -8,6 +8,11 @@
 {   
    color: white;
    background:  #000080;
+   border: none;
+}
+.log-btn:hover {
+    background: white;
+    color: #000080;
 }
 h1, h3
 {
