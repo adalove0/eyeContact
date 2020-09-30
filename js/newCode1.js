@@ -212,7 +212,7 @@ function displayContacts(jsonData)
 	    	document.getElementById("phone1").value = jsonData.contacts[this.id].phoneNumber;
 	    	document.getElementById("email1").value = jsonData.contacts[this.id].email;
 	    	document.getElementById("edit-container").style.display = "block";
-            	document.getElementById("contactView").style.display = "none";
+            	document.getElementById("container").style.display = "none";
 	    	document.getElementById("edit-btn").addEventListener("click",function(){
 		editContact(contactID);
 		document.getElementById("edit-container").style.display = "none";
