@@ -27,6 +27,14 @@
     font-family: 'Fjalla One', sans-serif;
     cursor: pointer;
 }
+.button:hover {
+    background: white;
+    color: #000080;
+}
+#btn-container button:hover {
+    background: white;
+    color: #000080;
+}
 #table1 tr:hover {
     background-color: white;
     color: black;
