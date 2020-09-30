@@ -344,7 +344,7 @@ img
   border-radius : 12px;
   font-family: 'Fjalla One', sans-serif;
 }
-.btn-container button:hover, 
+.button-block:hover
 {
    border: 2px solid #000080;
    background: white;
