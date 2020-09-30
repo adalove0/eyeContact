@@ -329,6 +329,16 @@ form
 	background: white;
   border-radius: 10px;
 }
+.input-edit
+{
+    	margin-bottom: 15px;
+	width: 90%;
+	padding: 2px 0;
+	border: 2px solid #CF584C;;
+	background: white;
+        border-radius: 10px;
+}
+	
 .icon
 {
 	padding: 14px;
