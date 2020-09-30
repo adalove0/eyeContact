@@ -220,6 +220,7 @@ function displayContacts(jsonData)
 	        document.getElementById("lnameVal").value = document.getElementById("lname1").value;
 	        document.getElementById("phoneVal").value = document.getElementById("phone1").value;
 	        document.getElementById("emailVal").value = document.getElementById("email1").value;
+	
             });
 	});
 	 cellDelete.addEventListener("click", function() {
@@ -310,10 +311,10 @@ function displayContacts(jsonData)
 	    document.getElementById("container").style.display = "none";
             document.getElementById("big-container").style.display = "block";
 	    document.getElementById("edit-button1").addEventListener("click", function(){
-	    	document.getElementById("fname1").value = firstName;
-	    	document.getElementById("lname1").value = lastName
-	    	document.getElementById("phone1").value = phoneNumber;
-	    	document.getElementById("email1").value = email;
+	    	document.getElementById("fname1").value = document.getElementById("fnameVal").value;
+	    	document.getElementById("lname1").value = document.getElementById("lnameVal").value;
+	    	document.getElementById("phone1").value = document.getElementById("phoneVal").value;
+	    	document.getElementById("email1").value = document.getElementById("emailVal").value;
 	    	document.getElementById("edit-container").style.display = "block";
             	document.getElementById("big-container").style.display = "none";
 	    	document.getElementById("edit-btn").addEventListener("click",function(){
