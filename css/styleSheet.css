@@ -13,6 +13,15 @@ h1, h3
 	font-family: 'Noto Sans KR', sans-serif;
 	 color:  #000080;
 }
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: rgb(139,0,139);
+    align-self: flex-start;
+    margin-left: 25px;
+}
 #btn-container
 {
 	text-align: center;
@@ -260,13 +269,6 @@ form
 	align-items: center;
         justify-content: center;
         flex-direction: column;
-}
-img
-{
-	border-radius: 50%;
-	margin-bottom: 25px;
-        float: center;
-
 }
 #logo-image
 {
