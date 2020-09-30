@@ -9,12 +9,12 @@ var valueToSrch = "";
         var verifiedPassword = document.getElementById("verify").value;
         if(username == "" || password == "" || verifiedPassword == "")
         {
-            doucment.getElementById("create-text").innerHTML = "Enter all required fields";
+            document.getElementById("create-text").innerHTML = "Enter all required fields";
             return;
         }
         if(password != verifiedPassword)
         {
-            doucment.getElementById("create-text").innerHTML =  "Passwords don't match";
+            document.getElementById("create-text").innerHTML =  "Passwords don't match";
             return;
         }
         password = MD5(password);
