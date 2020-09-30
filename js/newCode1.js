@@ -296,11 +296,7 @@ function displayContacts(jsonData)
         });*/
 	  document.getElementById("back-btn").addEventListener("click",function(){
 	    document.getElementById("edit-container").style.display = "none";
-            document.getElementById("big-container").style.display = "block";
-	    document.getElementById("fnameVal").value = document.getElementById("fname1").value;
-	     document.getElementById("lnameVal").value = document.getElementById("lname1").value;
-	     document.getElementById("phoneVal").value = document.getElementById("phone1").value;
-	      document.getElementById("emailVal").value = document.getElementById("email1").value;
+            document.getElementById("container").style.display = "block";
         });
         cellName.addEventListener("click", function(){
 	    var firstName = jsonData.contacts[this.id].contactFirstName;
