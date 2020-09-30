@@ -1,6 +1,5 @@
 
 var userID = 0;
-var valueToSrch = "";
     function create(){
         var url = 'http://plsgiveusana.me/api/Register.php';
         var username = document.getElementById("Username").value;
